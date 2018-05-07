@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  has_many :bookings
-  has_many :performances, through: :bookings
-  belongs_to :lodging
+  has_one :schedule
+  has_many :transactions
+  has_many :vendors, through: :transactions
 end
