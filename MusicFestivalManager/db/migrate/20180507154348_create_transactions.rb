@@ -4,6 +4,7 @@ class CreateTransactions < ActiveRecord::Migration[5.2]
       t.integer :user_id
       t.integer :vendor_id
       t.integer :item_id
+      t.integer :schedule_id
       t.decimal :transaction_total
 
       t.timestamps
