@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :items
+  resources :vendors
   resources :accesses
   resources :staffs
   resources :venues
