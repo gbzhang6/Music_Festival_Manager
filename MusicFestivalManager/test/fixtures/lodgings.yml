@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  type: 
+  distance_from_entrance: 1
+  capacity: MyString
+  facitilites: MyString
+
+two:
+  name: MyString
+  type: 
+  distance_from_entrance: 1
+  capacity: MyString
+  facitilites: MyString
