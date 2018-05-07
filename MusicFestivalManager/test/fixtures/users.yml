@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  favorite_genre: MyString
+  arrival_day: MyString
+  departure_day: MyString
+  lodging_id: 1
+
+two:
+  name: MyString
+  favorite_genre: MyString
+  arrival_day: MyString
+  departure_day: MyString
+  lodging_id: 1
