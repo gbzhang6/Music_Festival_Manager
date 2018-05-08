@@ -7,9 +7,4 @@ class User < ApplicationRecord
     self.schedule.vendors
   end
 
-  # def all_items
-  #   self.all_vendors.each do |vendor|
-  #   end
-  # end
-
 end
