@@ -10,6 +10,9 @@ require 'faker'
 
 Item.destroy_all
 User.destroy_all
+Stage.destroy_all
+Artist.destroy_all
+Performance.destroy_all
 
 20.times{Item.find_or_create_by(name: Faker::Food.dish, price: rand(30), vendor_id: rand(1..5))}
 
