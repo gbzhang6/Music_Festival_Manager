@@ -13,6 +13,7 @@ class SessionsController < ApplicationController
     else
       flash[:errors] = ["Cannot find username or verify password"]
       redirect_to login_path
+    end
   end
 
   def destroy
