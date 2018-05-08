@@ -1,5 +1,11 @@
-<h1>Your Schedule</h1>
+
+<h1>This is your current Governors' Ball Schedule</h1>
 
 <% @schedule.bookings.each do |booking| %>
-    
 <% end %>
+
+<div><%= link_to "Choose by Artist", artists_path %></div>
+
+<div><%= link_to "Choose by Stage", stages_path %></div>
+
+<div><%= link_to "Choose by Performance Time", performances_path %></div>
