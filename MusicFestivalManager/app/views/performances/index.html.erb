@@ -2,9 +2,9 @@
 
 <ul>
   <% @performances.each do |performance| %>
-    <li>Starts at: <%= button_to performance.start_time, bookings_path %></li>
+    <li>Starts at: <%#= button_to performance.start_time, bookings_path %></li>
     <li>Ends at: <%= performance.end_time %></li>
   <% end %>
 </ul>
 
-<%= render "common/nav_all" %>
+<%#= render "common/nav_all" %>
