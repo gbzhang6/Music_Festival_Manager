@@ -7,4 +7,6 @@ class User < ApplicationRecord
     self.schedule.vendors
   end
 
+  
+
 end
