@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+  has_secure_password
+  
   has_one :schedule
   has_many :visits, through: :schedule
   has_many :vendors, through: :visits
