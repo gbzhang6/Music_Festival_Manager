@@ -29,11 +29,11 @@ Performance.find_or_create_by(artist: (Artist.find(rand(1..10))), stage: (Stage.
 # cannot use find_or_create_by when using has_secure_password
 billy = User.create(name: "billy", password: "awesome", password_confirmation: "awesome")
 User.create(name: "shun", password: "awesome", password_confirmation: "awesome")
-User.create(name: "gui", password: "awesome", password_confirmation: "awesome")
+gui = User.create(name: "gui", password: "awesome", password_confirmation: "awesome")
 
 User.create(name: "yong-nicholas", password: "awesome", password_confirmation: "awesome")
 
-Schedule.create(name: "gui schedule", user_id: 3)
+gui.schedule = Schedule.create(name: "gui schedule")
 
 Booking.create(performance_id: 2, schedule_id: 1)
 Booking.create(performance_id: 6, schedule_id: 1)
