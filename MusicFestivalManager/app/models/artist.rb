@@ -1,5 +1,5 @@
 class Artist < ActiveRecord::Base
-  has_one :performances
-  has_one :stage, through: :performances
+  has_one :performance
+  has_one :stage, through: :performance
   has_many :bookings, through: :performances
 end
