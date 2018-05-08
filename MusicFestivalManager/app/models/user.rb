@@ -7,6 +7,7 @@ class User < ApplicationRecord
   has_many :bookings, through: :schedule
   has_many :performances, through: :bookings
   has_many :artists, through: :performances
+  has_many :stages, through: :performances
 
   def all_vendors
     self.schedule.vendors
