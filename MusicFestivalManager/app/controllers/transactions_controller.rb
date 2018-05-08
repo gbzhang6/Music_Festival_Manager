@@ -49,8 +49,8 @@ class TransactionsController < ApplicationController
     @transaction = Transaction.find(params[:id])
   end
 
-  def method_name
-    params.require(:transaction).permit(:vendor_id, :schedule_id)
+  def transaction_params
+    params.require(:transaction).permit(:vendor_id, :schedule_id, :transaction)
   end
 
 end
