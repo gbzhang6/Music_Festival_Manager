@@ -17,6 +17,7 @@ class Booking < ApplicationRecord
         booking.errors.full_messages
       end
     end
+  end
 
   def artist_name
     self.artist.name
