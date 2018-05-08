@@ -49,7 +49,7 @@ class BookingsController < ApplicationController
     @booking = Booking.find(params[:id])
   end
 
-  def method_name
+  def booking_params
     params.require(:booking).permit(:performance_id, :user_id)
   end
 end
