@@ -3,7 +3,7 @@ class Schedule < ActiveRecord::Base
   has_many :performances, through: :bookings
   has_many :transactions
   has_many :vendors, through: :transactions
-  has_one :user
+  belongs_to :user
 
   def all_items
 
