@@ -5,7 +5,7 @@ class Booking < ApplicationRecord
   delegate :stage, to: :performance
   delegate :start_time, to: :performance
   delegate :end_time, to: :performance
-  validate :performance_id, uniqueness: true
+  validates :performance_id, uniqueness: true
 
   def artist_name
     self.artist.name
