@@ -2,10 +2,10 @@
 
 <ul>
   <% @artists.each do |artist| %>
-    <!-- <li><%= button_to artist.name, bookings_path %></li> -->
-    <li><%= artist.performance.start_time if artist.performance%></li>
-    <li><%= artist.performance.end_time if artist.performance %></li>
-    <li><%= artist.stage if artist.stage %></li>
+    <h3><li><%= button_to artist.name, bookings_path %></h3></li>
+    Starting: <%= artist.performance.start_time if artist.performance%><br>
+    Ending: <%= artist.performance.end_time if artist.performance %><br>
+    Stage: <%= artist.stage.name if artist.stage %><br />
   <% end %>
 </ul>
 
