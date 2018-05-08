@@ -13,10 +13,11 @@ class SchedulesController < ApplicationController
   end
 
   def create
+    byebug
     @schedule = Schedule.create(schedule_params)
 
     if @schedule.valid?
-      redirect_to @schedule
+      redirect_to schedule_path
     else
       flash[:errors] = @schedule.errors.full_messages
       redirect_to new_schedule_path
@@ -50,7 +51,7 @@ class SchedulesController < ApplicationController
   end
 
   def schedule_params
-    params.require(:schedule).permit(:name, :user_id)
+    params.require(:schedule).permit(:name)
   end
 
 end
