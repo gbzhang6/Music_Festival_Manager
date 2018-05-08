@@ -1,7 +1,7 @@
 <h2>Welcome, <%= @user.name %>!</h2>
 
 <% if @user.schedule %>
-  <label>Your schedule: <%= link_to @user.schedule.name, schedule_path %></label>
+  <label>Your schedule: <%= link_to @user.schedule.name, schedule_path(@user.schedule) %></label>
 <% else %>
   <label><%= link_to 'Click to create a new schedule', new_schedule_path %></label>
 <% end %>

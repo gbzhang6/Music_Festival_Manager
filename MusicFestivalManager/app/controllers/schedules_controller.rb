@@ -6,6 +6,7 @@ class SchedulesController < ApplicationController
   end
 
   def show
+    byebug
   end
 
   def new
