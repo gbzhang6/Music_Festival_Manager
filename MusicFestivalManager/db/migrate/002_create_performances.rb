@@ -1,4 +1,4 @@
-class CreatePerformance < ActiveRecord::Migration
+class CreatePerformances < ActiveRecord::Migration[5.2]
   def change
     create_table :performances do |t|
       t.string :title

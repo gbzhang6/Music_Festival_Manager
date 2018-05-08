@@ -49,8 +49,8 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
-  def method_name
-    params.require(:user).permit(:name, :favorite_genre, :arrival_date, :departure_date, :lodging_id)
+  def user_params
+    params.require(:user).permit(:name, :schedule_id)
   end
 
 end
