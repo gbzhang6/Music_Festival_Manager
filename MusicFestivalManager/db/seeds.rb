@@ -15,19 +15,19 @@ Artist.destroy_all
 Performance.destroy_all
 Schedule.destroy_all
 
-# 20.times{Item.find_or_create_by(name: Faker::Food.dish, price: rand(30), vendor_id: rand(1..5))}
-#
-# 5.times{Stage.find_or_create_by(name: Faker::RickAndMorty.location, location: Faker::ParksAndRec.city)}
-#
-# 10.times{Artist.find_or_create_by(name: Faker::RickAndMorty.character, description: Faker::RickAndMorty.quote)}
-#
-# Performance.find_or_create_by(artist: (Artist.find(rand(1..10))), stage: (Stage.find(rand(1..5))), start_time: 10, end_time: 11)
-# Performance.find_or_create_by(artist: (Artist.find(rand(1..10))), stage: (Stage.find(rand(1..5))), start_time: 11, end_time: 12)
-# Performance.find_or_create_by(artist: (Artist.find(rand(1..10))), stage: (Stage.find(rand(1..5))), start_time: 9, end_time: 10)
-# Performance.find_or_create_by(artist: (Artist.find(rand(1..10))), stage: (Stage.find(rand(1..5))), start_time: 12, end_time: 13)
-# Performance.find_or_create_by(artist: (Artist.find(rand(1..10))), stage: (Stage.find(rand(1..5))), start_time: 15, end_time: 17)
-# Performance.find_or_create_by(artist: (Artist.find(rand(1..10))), stage: (Stage.find(rand(1..5))), start_time: 11, end_time: 12)
-#
+20.times{Item.find_or_create_by(name: Faker::Food.dish, price: rand(30), vendor_id: rand(1..5))}
+
+5.times{Stage.find_or_create_by(name: Faker::RickAndMorty.location, location: Faker::ParksAndRec.city)}
+
+10.times{Artist.find_or_create_by(name: Faker::RickAndMorty.character, description: Faker::RickAndMorty.quote)}
+
+Performance.find_or_create_by(artist: (Artist.find(rand(1..10))), stage: (Stage.find(rand(1..5))), start_time: 10, end_time: 11)
+Performance.find_or_create_by(artist: (Artist.find(rand(1..10))), stage: (Stage.find(rand(1..5))), start_time: 11, end_time: 12)
+Performance.find_or_create_by(artist: (Artist.find(rand(1..10))), stage: (Stage.find(rand(1..5))), start_time: 9, end_time: 10)
+Performance.find_or_create_by(artist: (Artist.find(rand(1..10))), stage: (Stage.find(rand(1..5))), start_time: 12, end_time: 13)
+Performance.find_or_create_by(artist: (Artist.find(rand(1..10))), stage: (Stage.find(rand(1..5))), start_time: 15, end_time: 17)
+Performance.find_or_create_by(artist: (Artist.find(rand(1..10))), stage: (Stage.find(rand(1..5))), start_time: 11, end_time: 12)
+
 
 # cannot use find_or_create_by when using has_secure_password
 billy = User.create(name: "billy", password: "awesome", password_confirmation: "awesome")

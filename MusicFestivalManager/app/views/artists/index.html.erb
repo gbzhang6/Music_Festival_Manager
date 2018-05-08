@@ -2,11 +2,11 @@
 
 <ul>
   <% @artists.each do |artist| %>
-    <li><%= button_to artist.name, bookings_path %></li>
+    <!-- <li><%= button_to artist.name, bookings_path %></li> -->
     <li><%= artist.performance.start_time %></li>
     <li><%= artist.performance.end_time %></li>
     <li><%= artist.stage %></li>
   <% end %>
 </ul>
 
-<%= render "common/nav_all" %>
+<!-- <%= render "common/nav_all" %> -->
