@@ -6,7 +6,6 @@ class SchedulesController < ApplicationController
   end
 
   def show
-    byebug
   end
 
   def new
@@ -20,7 +19,7 @@ class SchedulesController < ApplicationController
       redirect_to @schedule
     else
       flash[:errors] = @schedule.errors.full_messages
-      render :new
+      redirect_to new_schedule_path
     end
   end
 
