@@ -16,10 +16,10 @@ class BookingsController < ApplicationController
     @booking = Booking.create(booking_params)
 
     if @booking.valid?
-      redirect_to @booking
+      redirect_to schedule_path(@booking)
     else
       flash[:errors] = @booking.errors.full_messages
-      render :new
+      redirect_to schedule_path(@booking)
     end
   end
 
@@ -49,7 +49,7 @@ class BookingsController < ApplicationController
     @booking = Booking.find(params[:id])
   end
 
-  def method_name
+  def booking_params
     params.require(:booking).permit(:performance_id, :user_id)
   end
 end

@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   resources :vendors
   resources :artists
   resources :staffs
-  #resources :bookings
+  resources :bookings
   resources :users
   resources :performances
   resources :schedules
