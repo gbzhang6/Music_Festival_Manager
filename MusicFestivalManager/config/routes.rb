@@ -1,12 +1,15 @@
 Rails.application.routes.draw do
   resources :items
   resources :vendors
-  resources :accesses
+  resources :artists
   resources :staffs
-  resources :venues
-  resources :lodgings
-  resources :bookings
+  #resources :bookings
   resources :users
+  resources :performances
+  resources :schedules
+  #resources :transactions
+  resources :stages
+
 
   get '/signin', to: 'sessions#new', as: 'login'
   post '/sessions', to: 'sessions#create', as: 'sessions'
