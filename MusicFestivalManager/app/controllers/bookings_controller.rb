@@ -50,6 +50,6 @@ class BookingsController < ApplicationController
   end
 
   def booking_params
-    params.require(:booking).permit(:performance_id, :user_id)
+    params.require(:booking).permit(:performance_id, :schedule_id)
   end
 end
