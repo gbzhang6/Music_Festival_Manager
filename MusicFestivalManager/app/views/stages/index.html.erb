@@ -1,0 +1,12 @@
+<h3>Performance Stages</h3>
+
+<ul>
+  <% @stages.each do |stage| %>
+    <li><%= button_to stage.artist.name, bookings_path %></li>
+    <li><%= stage.name %></li>
+    <li><%= stage.performance.start_time %></li>
+    <li><%= stage.performance.end_time %></li>
+  <% end %>
+</ul>
+
+<%= render "common/nav_all" %>

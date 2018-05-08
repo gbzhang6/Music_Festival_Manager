@@ -16,10 +16,10 @@ class BookingsController < ApplicationController
     @booking = Booking.create(booking_params)
 
     if @booking.valid?
-      redirect_to @booking
+      redirect_to schedule_path(@booking)
     else
       flash[:errors] = @booking.errors.full_messages
-      render :new
+      redirect_to schedule_path(@booking)
     end
   end
 
