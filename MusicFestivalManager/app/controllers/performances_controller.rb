@@ -42,9 +42,9 @@ class PerformancesController < ApplicationController
 
   private
 
-  def performance_params
-    params.require(:performance).permit(:title, :artist_id, :stage_id)
-  end
+  # def performance_params
+  #   params.require(:performance).permit(:title, :artist_id, :stage_id)
+  # end
 
   def find_performance
     @performance = Performance.find(params[:id])
