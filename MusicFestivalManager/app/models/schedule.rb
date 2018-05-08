@@ -5,7 +5,7 @@ class Schedule < ActiveRecord::Base
   has_many :vendors, through: :visits
   has_one :user
 
-  def all_items
-
+  def bookings_by_time
+    self.bookings.all.sort_by {|el| el.start_time}
   end
 end
