@@ -15,6 +15,7 @@ Artist.destroy_all
 Performance.destroy_all
 Schedule.destroy_all
 
+<<<<<<< HEAD
 20.times{Item.find_or_create_by(name: Faker::Food.dish, price: rand(30), vendor_id: rand(1..5))}
 
 5.times{Stage.find_or_create_by(name: Faker::RickAndMorty.location, location: Faker::ParksAndRec.city)}
@@ -28,11 +29,11 @@ Performance.find_or_create_by(artist: (Artist.find(rand(1..10))), stage: (Stage.
 Performance.find_or_create_by(artist: (Artist.find(rand(1..10))), stage: (Stage.find(rand(1..5))), start_time: "15:00", end_time: "17:00")
 Performance.find_or_create_by(artist: (Artist.find(rand(1..10))), stage: (Stage.find(rand(1..5))), start_time: "11:00", end_time: "12:00")
 
-
 # cannot use find_or_create_by when using has_secure_password
 billy = User.create(name: "billy", password: "awesome", password_confirmation: "awesome")
 User.create(name: "shun", password: "awesome", password_confirmation: "awesome")
 User.create(name: "gui", password: "awesome", password_confirmation: "awesome")
+
 User.create(name: "yong-nicholas", password: "awesome", password_confirmation: "awesome")
 
 Schedule.create(name: "gui schedule", user_id: 3)
