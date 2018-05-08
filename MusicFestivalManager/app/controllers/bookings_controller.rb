@@ -50,6 +50,6 @@ class BookingsController < ApplicationController
   end
 
   def method_name
-    params.require(:booking).permit(:name, :favorite_genre, :arrival_date, :departure_date, :lodging_id)
+    params.require(:booking).permit(:performance_id, :user_id)
   end
 end

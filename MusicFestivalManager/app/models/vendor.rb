@@ -1,5 +1,5 @@
 class Vendor < ApplicationRecord
-  has_many :transactions
+  has_many :visits
   has_many :items
-  has_many :users, through: :transactions
+  has_many :users, through: :visits
 end
