@@ -17,9 +17,11 @@ class BookingsController < ApplicationController
 
     if @booking.valid?
       redirect_to schedule_path(@booking)
+      # This won't work
     else
       flash[:errors] = @booking.errors.full_messages
       redirect_to schedule_path(@booking)
+      # This won't work
     end
   end
 
