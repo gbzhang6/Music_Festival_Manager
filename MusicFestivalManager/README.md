@@ -43,6 +43,12 @@ Things you may want to cover:
   3. I should be able to see all the artists
   BONUS 1: I should be able to make an announcement to all users, i.e. weather announcement
 
+  Performance/Artist/Stage/Bookings
+  1. Artist has a name and description
+  2. Stage has a name and location
+  3. Performance needs a time and duration(start time and end time), an artist, and a stage
+  4. Booking needs to be able to join the user schedule with the performance, booking needs to prevent user from scheduling a booking if there is an overlap in performance time. Also it should show which performance is overlapping with so they can choose which performance to see.
+  5. schedule is a collection of all the booking
 
 
 
