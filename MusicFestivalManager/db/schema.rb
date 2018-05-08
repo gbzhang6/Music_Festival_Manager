@@ -10,13 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_05_07_220649) do
+ActiveRecord::Schema.define(version: 2018_05_08_171800) do
 
   create_table "artists", force: :cascade do |t|
     t.string "name"
     t.string "description"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "bookings", force: :cascade do |t|
@@ -35,9 +33,10 @@ ActiveRecord::Schema.define(version: 2018_05_07_220649) do
   end
 
   create_table "performances", force: :cascade do |t|
-    t.string "title"
     t.integer "artist_id"
     t.integer "stage_id"
+    t.time "start_time"
+    t.time "end_time"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -51,28 +50,27 @@ ActiveRecord::Schema.define(version: 2018_05_07_220649) do
 
   create_table "stages", force: :cascade do |t|
     t.string "name"
+    t.string "location"
+  end
+
+  create_table "transactions", force: :cascade do |t|
+    t.integer "vendor_id"
+    t.integer "schedule_id"
+    t.decimal "transaction_total"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
     t.string "name"
-    t.integer "schedule_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "password_digest"
   end
 
   create_table "vendors", force: :cascade do |t|
     t.string "name"
     t.string "category"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "visits", force: :cascade do |t|
-    t.integer "vendor_id"
-    t.integer "schedule_id"
-    t.decimal "transaction_total"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

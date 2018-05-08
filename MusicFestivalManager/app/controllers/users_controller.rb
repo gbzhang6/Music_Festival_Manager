@@ -19,11 +19,12 @@ class UsersController < ApplicationController
       redirect_to @user
     else
       flash[:errors] = @user.errors.full_messages
-      render :new
+      redirect_to new_user_path
     end
   end
 
   def edit
+    authorized_for_user(@user)
   end
 
   def update
@@ -33,7 +34,7 @@ class UsersController < ApplicationController
       redirect_to @user
     else
       flash[:errors] = @user.errors.full_messages
-      render :edit
+      redirect_to edit_user_path(@user)
     end
   end
 
@@ -50,7 +51,7 @@ class UsersController < ApplicationController
   end
 
   def user_params
-    params.require(:user).permit(:name, :schedule_id)
+    params.require(:user).permit(:name, :password, :password_confirmation)
   end
 
 end
