@@ -18,19 +18,20 @@
       <!-- Collect the nav links, forms, and other content for toggling -->
 
         <ul class="nav navbar-nav">
-          <li class="active"><a href="#">HOME</a></li>
-          <li><%=link_to "Your Schedule", schedules_path%></li>
+
+          <li><%= link_to "Your Schedule", @user.schedule if @user  && session[:user_id] %></li>
+
           <li><a href="#">View All Performances</a></li>
           <li><%= link_to"Artists", artists_path %></li>
           <li><%=link_to"Stages", stages_path%></li>
           <li><%=link_to"Performance Times", performances_path %></li>
-          <li><%=link_to"Log Out", user_path(@user.id), method: "delete" if @user%></li>
         </ul>
         <%= form_tag("/search", method: "get") do %>
           <%= label_tag(:friend_name, "Search for:") %>
           <%= text_field_tag(:friend_name) %>
           <%= submit_tag("Search") %>
         <% end %>
+        <li class="active"><a href= "/">Log In</a></li>
 
       </div>
     </div>
