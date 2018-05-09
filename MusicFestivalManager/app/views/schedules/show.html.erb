@@ -5,6 +5,7 @@
   </tr>
   <tr>
     <% @schedule.bookings.each do |booking| %>
+    <tr>
       <td> <%= booking.start_time %> </td>
       <td> <%= booking.end_time %> </td>
       <td> Seeing <%= booking.artist_name %> at the <%= booking.stage_name %> stage. </td>
@@ -14,6 +15,7 @@
       <%= flash[:errors] %>
       <% end  %>
     </tr>
+  </tr>
 </table>
 
 <%= form_tag("/search", method: "get") do %>
