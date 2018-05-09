@@ -43,6 +43,10 @@ class SchedulesController < ApplicationController
     redirect_to schedules_path
   end
 
+  def friend_schedule
+    @
+  end
+
 
   private
 
