@@ -1,12 +1,19 @@
-<h3>Artist Performances</h3>
+<table><h2>Artist Performances</h2>
 
-<ul>
+<tr>
+  <th>Artist</th>
+  <th>Stage</th>
+  <th>Start Time</th>
+  <th>End Time</th>
+</tr>
   <% @artists.each do |artist| %>
-    <h3><li><%= button_to artist.name, bookings_path %></h3></li>
-    Starting: <%= artist.performance.start_time if artist.performance%><br>
-    Ending: <%= artist.performance.end_time if artist.performance %><br>
-    Stage: <%= artist.stage.name if artist.stage %><br />
+  <tr>
+    <td> <%= artist.name %> </td>
+    <td> <%= artist.performance.stage.name %> </td>
+    <td> <%= artist.performance.start_time %> </td>
+    <td> <%= artist.performance.end_time %> </td>
+  </tr>
   <% end %>
-</ul>
+</table>
 
 <%#= render "common/nav_all" %>
