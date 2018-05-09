@@ -9,7 +9,6 @@ class BookingsController < ApplicationController
   end
 
   def new
-    byebug
     @booking = Booking.new
   end
 
@@ -43,17 +42,18 @@ class BookingsController < ApplicationController
     redirect_to schedule_path(@booking.schedule)
   end
 
-<<<<<<< HEAD
-  def find_user
-    if params[:friend_name]
-      @user = User.find_by(name: params[:friend_name])
-      redirect_to user_path(@user)
-    end 
+  def find_friend
+    @user = User.find(session[:user_id])
+    if User.all_names.include?(params[:friend_name])
+      @friend_user = User.find_by(name: params[:friend_name])
+      redirect_to schedule_path(@friend_user.schedule)
+    else
+      flash[:errors] = "User does not exist"
+      redirect_to schedule_path(@user.schedule)
+    end
   end
 
 
-=======
->>>>>>> cb18a840045a57a367ee333aff2c54f1d160bbfd
   private
 
   def find_booking

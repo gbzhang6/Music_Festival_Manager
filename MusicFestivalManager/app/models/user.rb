@@ -13,4 +13,8 @@ class User < ApplicationRecord
     self.schedule.vendors
   end
 
+  def self.all_names
+    self.all.map {|el| el.name}
+  end
+
 end

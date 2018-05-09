@@ -23,6 +23,9 @@
     <tr><%= link_to "Choose by Stage", stages_path %></tr>
     <tr><%= link_to "Choose by Performance Time", performances_path %></tr>
   </tr>
+  <% if flash[:errors] %>
+    <%= flash[:errors] %>
+  <% end  %>
 </table>
 
 <%= form_tag("/search", method: "get") do %>
