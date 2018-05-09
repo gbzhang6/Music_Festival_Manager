@@ -24,6 +24,7 @@
           <li><%= link_to"Artists", artists_path %></li>
           <li><%=link_to"Stages", stages_path%></li>
           <li><%=link_to"Performance Times", performances_path %></li>
+          <li><%=link_to"Log Out", user_path(@user.id), method: "delete" if @user%></li>
         </ul>
         <%= form_tag("/search", method: "get") do %>
           <%= label_tag(:friend_name, "Search for:") %>
