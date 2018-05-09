@@ -1,5 +1,5 @@
 class PerformancesController < ApplicationController
-  before_action :find_performance, only: [:show, :edit, :update, :destroy]
+  before_action :find_user, only: [:index, :show, :edit, :update, :destroy]
 
   def index
     @performances = Performance.all
@@ -42,12 +42,8 @@ class PerformancesController < ApplicationController
 
   private
 
-  # def performance_params
-  #   params.require(:performance).permit(:title, :artist_id, :stage_id)
-  # end
-
-  def find_performance
-    @performance = Performance.find(params[:id])
+  def find_user
+    @user = User.find(session[:user_id])
   end
 
 end

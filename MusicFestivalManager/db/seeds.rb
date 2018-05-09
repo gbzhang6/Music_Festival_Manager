@@ -38,4 +38,7 @@ Performance.find_or_create_by(artist: (Artist.find(6)), stage: (Stage.find(rand(
 # cannot use find_or_create_by when using has_secure_password
 
 Booking.create(performance_id: 2, schedule_id: 1)
+Booking.create(performance_id: 6, schedule_id: 1)
+Booking.create(performance_id: 4, schedule_id: 2)
 Booking.create(performance_id: 6, schedule_id: 2)
+Booking.create(performance_id: 3, schedule_id: 2)

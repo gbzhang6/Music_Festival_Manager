@@ -9,6 +9,7 @@ class BookingsController < ApplicationController
   end
 
   def new
+    byebug
     @booking = Booking.new
   end
 
@@ -42,6 +43,7 @@ class BookingsController < ApplicationController
     redirect_to schedule_path(@booking.schedule)
   end
 
+<<<<<<< HEAD
   def find_user
     if params[:friend_name]
       @user = User.find_by(name: params[:friend_name])
@@ -50,6 +52,8 @@ class BookingsController < ApplicationController
   end
 
 
+=======
+>>>>>>> cb18a840045a57a367ee333aff2c54f1d160bbfd
   private
 
   def find_booking
