@@ -5,7 +5,7 @@ class Booking < ApplicationRecord
   delegate :stage, to: :performance
   delegate :start_time, to: :performance
   delegate :end_time, to: :performance
-  validates :performance_id, uniqueness: true
+  validates :schedule_id, uniqueness: true
   # validates :overlapping_time_for_performances
 
   # def overlapping_time_for_performances
