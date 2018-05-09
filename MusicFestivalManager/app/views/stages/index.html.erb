@@ -1,12 +1,21 @@
-<h3>Performance Stages</h3>
+<table><h2>Performance Stages</h2>
 
-<ul>
+<tr>
+  <th>Stage</th>
+  <th>Artist</th>
+  <th>Start Time</th>
+  <th>End Time</th>
+</tr>
   <% @stages.each do |stage| %>
-    <li><%#= button_to stage.artist.name, bookings_path %></li>
-    <li><%= stage.name %></li>
-    <li><%= stage.performance.start_time if stage.performance%></li>
-    <li><%= stage.performance.end_time if stage.performance%></li>
+  <tr>
+    <% stage.performances.each do |performance| %>
+      <td> <%= stage.name %> </td>
+      <td> <%= performance.artist.name %> </td>
+      <td> <%= performance.start_time %> </td>
+      <td> <%= performance.end_time %> </td>
+    </tr>
+    <% end %>
   <% end %>
-</ul>
+</table>
 
 <%#= render "common/nav_all" %>
