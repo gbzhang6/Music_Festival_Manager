@@ -9,9 +9,9 @@
   <% @artists.each do |artist| %>
   <tr>
     <td> <%= artist.name %> </td>
-    <td> <%= artist.performance.stage.name %> </td>
-    <td> <%= artist.performance.start_time %> </td>
-    <td> <%= artist.performance.end_time %> </td>
+    <td> <%= artist.performance.stage.name if artist.performance %> </td>
+    <td> <%= artist.performance.start_time if artist.performance %> </td>
+    <td> <%= artist.performance.end_time if artist.performance %> </td>
   </tr>
   <% end %>
 </table>
