@@ -16,10 +16,10 @@ class BookingsController < ApplicationController
     @booking = Booking.create(booking_params)
 
     if @booking.valid?
-      redirect_to schedule_path(@booking)
+      redirect_to schedule_path(@booking.schedule)
     else
       flash[:errors] = @booking.errors.full_messages
-      redirect_to schedule_path(@booking)
+      redirect_to schedule_path(@booking.schedule)
     end
   end
 
@@ -30,16 +30,16 @@ class BookingsController < ApplicationController
     @booking.update(booking_params)
 
     if @booking.valid?
-      redirect_to @booking
+      redirect_to schedule_path(@booking.schedule)
     else
       flash[:errors] = @booking.errors.full_messages
-      render :edit
+      redirect_to edit_booking_path(@booking)
     end
   end
 
   def destroy
     @booking.destroy
-    redirect_to bookings_path
+    redirect_to schedule_path(@booking.schedule)
   end
 
 

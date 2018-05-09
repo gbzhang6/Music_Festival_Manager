@@ -13,13 +13,14 @@ class SchedulesController < ApplicationController
   end
 
   def create
+    byebug
     @schedule = Schedule.create(schedule_params)
 
     if @schedule.valid?
-      redirect_to @schedule
+      redirect_to schedule_path
     else
       flash[:errors] = @schedule.errors.full_messages
-      render :new
+      redirect_to new_schedule_path
     end
   end
 
