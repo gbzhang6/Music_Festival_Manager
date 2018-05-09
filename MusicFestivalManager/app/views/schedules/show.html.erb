@@ -1,17 +1,29 @@
 <h1>Welcome to the Governors' Ball Schedule Planner</h1>
+<div>
+<table>
+  <tr>
+    <th>Your Current Schedule</th>
+  </tr>
+  <tr>
+    <% @schedule.bookings.each do |booking| %>
+      <td> <%= booking.start_time %> </td>
+      <td> <%= booking.end_time %> </td>
+      <td> Seeing <%= booking.artist_name %> at the <%= booking.stage_name %> stage. </td>
+    </tr>
+  <% end %>
+</table>
+</div>
 
-<th>Your Current Schedule</th>
-<% @schedule.bookings.each do |booking| %>
-    <%= booking.start_time %>
-    <%= booking.end_time %>
-    Seeing <%= booking.artist_name %> at the <%= booking.stage_name %> stage.<br />
-<% end %><br />
-<th> Links </th>
-<div><%= link_to "Choose by Artist", artists_path %></div>
-
-<div><%= link_to "Choose by Stage", stages_path %></div>
-
-<div><%= link_to "Choose by Performance Time", performances_path %></div>
+<table>
+  <tr>
+    <th>Add to Your Schedule</th>
+  </tr>
+  <tr>
+    <tr><%= link_to "Choose by Artist", artists_path %></tr>
+    <tr><%= link_to "Choose by Stage", stages_path %></tr>
+    <tr><%= link_to "Choose by Performance Time", performances_path %></tr>
+  </tr>
+</table>
 
 <%= form_tag("/search", method: "get") do %>
   <%= label_tag(:friend_name, "Search for:") %>
