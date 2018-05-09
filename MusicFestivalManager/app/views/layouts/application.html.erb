@@ -25,6 +25,11 @@
           <li><%=link_to"Stages", stages_path%></li>
           <li><%=link_to"Performance Times", performances_path %></li>
         </ul>
+        <%= form_tag("/search", method: "get") do %>
+          <%= label_tag(:friend_name, "Search for:") %>
+          <%= text_field_tag(:friend_name) %>
+          <%= submit_tag("Search") %>
+        <% end %>
 
       </div>
     </div>
