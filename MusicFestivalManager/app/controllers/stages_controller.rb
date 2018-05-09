@@ -1,5 +1,5 @@
 class StagesController < ApplicationController
-  before_action :find_stage, only: [:show, :edit, :update, :destroy]
+  before_action :find_user, only: [:index, :show, :edit, :update, :destroy]
 
   def index
     @stages = Stage.all
@@ -46,8 +46,12 @@ class StagesController < ApplicationController
   #   params.require(:stage).permit(:name, :venue_id)
   # end
   #
-  def find_stage
-    @stage = Stage.find(params[:id])
+  def find_user
+    @user = User.find(session[:user_id])
   end
+
+  # def find_stage
+  #   @stage = Stage.find(params[:id])
+  # end
 
 end

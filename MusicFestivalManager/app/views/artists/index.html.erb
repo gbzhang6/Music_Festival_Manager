@@ -6,7 +6,7 @@
     <p>Stage: <%= artist.stage.name if artist.stage %></p>
     Starting: <%= artist.performance.start_time.strftime("%A, %x at %l:%m%p") if artist.performance%><br>
     Ending: <%= artist.performance.end_time.strftime("%A, %x at %l:%m%p") if artist.performance %><br>
-    <%= button_to "Yes! I'm going to this show.", bookings_path %>
+    <%= button_to "Yes! I'm going to this show.", bookings_path() %>
   <% end %>
 </ul>
 
