@@ -12,6 +12,11 @@
 <div><%= link_to "Choose by Stage", stages_path %></div>
 
 <div><%= link_to "Choose by Performance Time", performances_path %></div>
+<br />
+
+<% if flash[:errors] %>
+  <%= flash[:errors] %>
+<% end  %>
 
 <%= form_tag("/search", method: "get") do %>
   <%= label_tag(:friend_name, "Search for:") %>
