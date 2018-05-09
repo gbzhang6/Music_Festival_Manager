@@ -42,8 +42,11 @@ class BookingsController < ApplicationController
     redirect_to schedule_path(@booking.schedule)
   end
 
-  def friend_schedule
-    @
+  def find_user
+    if params[:friend_name]
+      @user = User.find_by(name: params[:friend_name])
+      redirect_to user_path(@user)
+    end 
   end
 
 

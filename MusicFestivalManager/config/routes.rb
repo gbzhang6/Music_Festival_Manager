@@ -13,6 +13,6 @@ Rails.application.routes.draw do
   get '/', to: 'sessions#new', as: 'login'
   post '/sessions', to: 'sessions#create', as: 'sessions'
   post '/logout', to: 'sessions#destroy', as: 'logout'
-  get '/search', to: 'booking#find_user'
+  get '/search', to: 'bookings#find_user'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
