@@ -1,13 +1,27 @@
-<h3>Artist Performances</h3>
+<table><h2>Artist Performances</h2>
 
-<ul>
+<tr>
+  <th>Artist</th>
+  <th>Stage</th>
+  <th>Start Time</th>
+  <th>End Time</th>
+</tr>
   <% @artists.each do |artist| %>
+<<<<<<< HEAD
     <h3><%= artist.name %></h3>
     <p>Stage: <%= artist.stage.name if artist.stage %></p>
     Starting: <%= artist.performance.start_time.strftime("%A, %x at %l:%m%p") if artist.performance%><br>
     Ending: <%= artist.performance.end_time.strftime("%A, %x at %l:%m%p") if artist.performance %><br>
     <%= button_to "Yes! I'm going to this show.", bookings_path() %>
+=======
+  <tr>
+    <td> <%= artist.name %> </td>
+    <td> <%= artist.performance.stage.name if artist.performance %> </td>
+    <td> <%= artist.performance.start_time if artist.performance %> </td>
+    <td> <%= artist.performance.end_time if artist.performance %> </td>
+  </tr>
+>>>>>>> 44ab64b44200f1f9fd5ca0478ef084eed2f2e6ea
   <% end %>
-</ul>
+</table>
 
 <%#= render "common/nav_all" %>

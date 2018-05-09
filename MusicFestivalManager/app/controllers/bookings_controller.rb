@@ -1,5 +1,5 @@
 class BookingsController < ApplicationController
-  before_action :find_booking, :find_user, only: [:show, :edit, :create, :update, :destroy]
+  before_action :find_booking, :find_user, only: [:show, :edit, :update, :destroy]
 
   def index
     @bookings = Booking.all
@@ -13,7 +13,7 @@ class BookingsController < ApplicationController
   end
 
   def create
-    @booking = Booking.create(booking_params)
+    @booking = Booking.create(performance_id: params[:performance_id], schedule_id: params[:schedule_id])
 
     if @booking.valid?
       redirect_to schedule_path(@booking.schedule)
@@ -52,7 +52,7 @@ class BookingsController < ApplicationController
     @user = User.find(session[:user_id])
   end
 
-  def booking_params
-    params.require(:booking).permit(:performance_id, :schedule_id)
-  end
+  # def booking_params
+  #   params.require(:booking).permit(:performance_id, :schedule_id)
+  # end
 end
