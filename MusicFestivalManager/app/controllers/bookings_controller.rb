@@ -9,6 +9,7 @@ class BookingsController < ApplicationController
   end
 
   def new
+    byebug
     @booking = Booking.new
   end
 
@@ -41,11 +42,6 @@ class BookingsController < ApplicationController
     @booking.destroy
     redirect_to schedule_path(@booking.schedule)
   end
-
-  def friend_schedule
-    @
-  end
-
 
   private
 

@@ -13,9 +13,11 @@
   <td> <%= performance.stage.name %> </td>
   <td> <%= performance.start_time.strftime("%A, %x at %l:%m%p") %> </td>
   <td> <%= performance.end_time.strftime("%A, %x at %l:%m%p") %> </td>
-  <td> <%= button_to "Yes! I'm going to this show.", bookings_path %> </td>
+  <td> <%= button_to "Add to My Schedule", bookings_path(:performance_id => performance, :schedule_id => @user.schedule) %> </td>
 </tr>
   <% end %>
 </table>
 
-<%#= render "common/nav_all" %>
+<%= params.inspect %>
+
+<%#= (:performance_id => performance, :schedule_id => @user.schedule) %>
