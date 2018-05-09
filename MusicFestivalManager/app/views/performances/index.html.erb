@@ -18,6 +18,8 @@
   <% end %>
 </table>
 
+<%= button_to "Return to Schedule", schedule_path(@user.schedule), method: :get %>
+
 <%= params.inspect %>
 
 <%#= (:performance_id => performance, :schedule_id => @user.schedule) %>
