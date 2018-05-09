@@ -12,9 +12,11 @@
     <td> <%= artist.performance.stage.name if artist.performance %> </td>
     <td> <%= artist.performance.start_time.strftime("%A, %x at %l:%m%p") if artist.performance %> </td>
     <td> <%= artist.performance.end_time.strftime("%A, %x at %l:%m%p") if artist.performance %> </td>
-    <td> <%= button_to "Add to My Schedule", bookings_path() %> </td>
+    <td> <%= button_to "Add to My Schedule", bookings_path(:performance_id => artist.performance, :schedule_id => @user.schedule) %> </td>
   </tr>
   <% end %>
 </table>
+
+<%= button_to "Return to Schedule", schedule_path(@user.schedule), method: :get %>
 
 <%#= render "common/nav_all" %>
