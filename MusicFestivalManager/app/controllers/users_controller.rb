@@ -17,6 +17,7 @@ class UsersController < ApplicationController
 
     if @user.valid?
       @user.schedule = Schedule.create(name: "#{@user.name}'s awesome schedule'")
+      session[:user_id] = @user.id
       redirect_to @user
     else
       flash[:errors] = @user.errors.full_messages
