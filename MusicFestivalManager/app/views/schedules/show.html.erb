@@ -1,19 +1,50 @@
-<h1> <%= current_user.first_name %>'s Governors' Ball Schedule Planner</h1>
-<table>
-  <tr>
-    <th>Your Current Schedule</th>
-  </tr>
-  <tr>
-    <% @schedule.bookings.each do |booking| %>
-    <tr>
-      <td> <%= booking.start_time.strftime("%A, %x at %l:%m%p") %> </td>
-      <td> <%= booking.end_time.strftime("%A, %x at %l:%m%p") %> </td>
-      <td> Seeing <%= booking.artist_name %> at the <%= booking.stage_name %> stage. </td>
-      <td> <%= button_to "Remove From Schedule",
-       booking, method: :delete %> </td>
-    </tr>
-      <% end %>
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+    }
 
+    td, th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+        font-size: 16px;
+    }
+
+    tr:nth-child(even) {
+        background-color: #dddddd;
+    }
+  </style>
+</head>
+
+<body>
+  <h1> <%= current_user.first_name %>'s Governors' Ball Schedule Planner</h1>
+
+  <h2>Your Current Schedule</h2>
+
+  <table>
+    <tr>
+      <th>Start Time</th>
+      <th>End Time</th>
+      <th>Artist</th>
+      <th>Stage</th>
+    </tr>
+
+
+    <tr>
+      <% @schedule.bookings.each do |booking| %>
+        <tr>
+          <td> <%= booking.start_time.strftime("%l:%m%p") %> </td>
+          <td> <%= booking.end_time.strftime("%A, %x at %l:%m%p") %> </td>
+          <td> <%= booking.artist_name %> </td>
+          <td> <%= booking.stage_name %> </td>
+          <td> <%= button_to "Remove From Schedule", booking, method: :delete %> </td>
+        </tr>
+      <% end %>
       <% if flash[:errors] %>
           <% flash[:errors].each do |error| %>
               <%= error %>
@@ -22,4 +53,8 @@
       <br>
     </tr>
   </tr>
-</table>
+  </table>
+
+</body>
+
+</html>
