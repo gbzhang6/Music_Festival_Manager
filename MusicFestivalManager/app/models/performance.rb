@@ -19,4 +19,12 @@ class Performance < ActiveRecord::Base
     minutes + hr_to_minutes
   end
 
+  def artist_name
+    self.artist.name
+  end
+
+  def stage_name
+    self.stage.name
+  end
+
 end

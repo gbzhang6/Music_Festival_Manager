@@ -49,7 +49,8 @@ class SchedulesController < ApplicationController
   private
 
   def find_schedule
-    @schedule = Schedule.find(params[:id])
+    unsorted_schedule = Schedule.find(params[:id])
+    @schedule = unsorted_schedule.bookings.sort_by {|el| el.performance.start_time}
   end
 
   def schedule_params
