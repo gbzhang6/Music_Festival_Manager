@@ -1,5 +1,5 @@
-<h2>The most popular artist is: <%= @most_popular_artist %>.</h2>
-<h2>The userwith the most bookings is: <%= @user_with_most_bookings %>.</h2>
+<h2>The most popular artist is: <%= @most_popular_artist.name %>.</h2>
+<h2>The userwith the most bookings is: <%= @user_with_most_bookings.first_name %> <%= @user_with_most_bookings.last_name %>.</h2>
 <h2>Male users account for <%= @male_percentage %> of all users.</h2>
 <h2>Female users account for <%= @female_count %> of all users.</h2>
 <h2>Average age of all users is: <%= @users_avg_age %>.</h2>
