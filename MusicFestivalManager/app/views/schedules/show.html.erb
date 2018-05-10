@@ -36,10 +36,10 @@
 
 
     <tr>
-      <% @schedule.bookings.each do |booking| %>
+      <% @schedule.each do |booking| %>
         <tr>
-          <td> <%= booking.start_time.strftime("%l:%m%p") %> </td>
-          <td> <%= booking.end_time.strftime("%A, %x at %l:%m%p") %> </td>
+          <td> <%= booking.start_time.strftime("%A at %l:%m %p") %> </td>
+          <td> <%= booking.end_time.strftime("%A, %x at %l:%m %p") %> </td>
           <td> <%= booking.artist_name %> </td>
           <td> <%= booking.stage_name %> </td>
           <td> <%= button_to "Remove From Schedule", booking, method: :delete %> </td>

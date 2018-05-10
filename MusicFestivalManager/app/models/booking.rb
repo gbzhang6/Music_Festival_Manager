@@ -38,7 +38,7 @@ class Booking < ApplicationRecord
   end
 
   def duration_range
-    (self.start_mins..self.end_mins).to_a
+    (self.start_mins..(self.end_mins - 1)).to_a
   end
 
   def start_mins
