@@ -1,0 +1,45 @@
+<h1> <%= @friend_schedule.user.first_name %>'s Governors' Ball Schedule Planner</h1>
+<table>
+  <tr>
+    <th>Your Current Schedule</th>
+  </tr>
+  <tr>
+    <% @friend_schedule.bookings.each do |booking| %>
+    <tr>
+      <td> <%= booking.start_time %> </td>
+      <td> <%= booking.end_time %> </td>
+      <td> Seeing <%= booking.artist_name %> at the <%= booking.stage_name %> stage. </td>
+    </tr>
+      <% end %>
+
+      <% if flash[:errors] %>
+      <%= flash[:errors] %>
+      <% end  %>
+    </tr>
+  </tr>
+</table>
+
+<br />
+
+<h1> <%= current_user.first_name %>'s Governors' Ball Schedule Planner</h1>
+<table>
+  <tr>
+    <th>Your Current Schedule</th>
+  </tr>
+  <tr>
+    <% @user_schedule.bookings.each do |booking| %>
+    <tr>
+      <td> <%= booking.start_time %> </td>
+      <td> <%= booking.end_time %> </td>
+      <td> Seeing <%= booking.artist_name %> at the <%= booking.stage_name %> stage. </td>
+      <td> <%= button_to "Remove From Schedule",
+       booking, method: :delete %> </td>
+    </tr>
+      <% end %>
+
+      <% if flash[:errors] %>
+      <%= flash[:errors] %>
+      <% end  %>
+    </tr>
+  </tr>
+</table>
