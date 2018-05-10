@@ -31,7 +31,10 @@
   <%= f.password_field :password %><br />
   <%= f.label :password_confirmation, "Retype your password:" %>
   <%= f.password_field :password_confirmation %><br />
-  <%= f.submit %>
+  <%= button_tag(type: "submit", class: "btn btn-primary", name: "create", value: "conceal") do %>
+    <span class="glyphicon glyphicon-user"></span> Create User
+  <% end %> 
 <% end %>
 
 </body>
+
