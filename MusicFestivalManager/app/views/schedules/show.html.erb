@@ -13,15 +13,29 @@
         text-align: left;
         padding: 8px;
         font-size: 16px;
+        background-color: rgba(255,255,255,0.5);
+        color: black;
     }
 
     tr:nth-child(even) {
         background-color: #dddddd;
     }
+
+    h1 {
+        color: DeepSkyBlue;
+        /* background-color: rgba(255,255,255,0.5); */
+    }
+
+    h2 {
+        color: DeepSkyBlue;
+        /* background-color: rgba(255,255,255,0.5); */
+    }
+
   </style>
 </head>
 
-<body>
+<body background="https://www.nycpretty.com/wp-content/uploads/2017/06/purple-lights-gov-ball-festival-crowds-nyc.jpg">
+
   <h1> <%= current_user.first_name %>'s Governors' Ball Schedule Planner</h1>
 
   <h2>Your Current Schedule</h2>

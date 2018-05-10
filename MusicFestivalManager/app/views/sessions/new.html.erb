@@ -1,3 +1,18 @@
+<head>
+  <style>
+    h2 {
+        color: DeepSkyBlue;
+        /* background-color: rgba(255,255,255,0.5); */
+    }
+    label {
+        color: DeepSkyBlue;
+        /* background-color: rgba(255,255,255,0.5); */
+    }
+  </style>
+</head>
+
+<body background="https://boweryboogie-wpengine.netdna-ssl.com/content/uploads/2017/06/govball-2017-18_wm.jpg">
+
 <h2>Sign in:</h2>
 <%= form_tag sessions_path do %>
   <%= label_tag :name %>
@@ -10,3 +25,5 @@
 <br />
 
 <label><%= link_to "Or click to create a new account", new_user_path%></label>
+
+</body>
