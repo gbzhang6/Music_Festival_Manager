@@ -18,7 +18,7 @@
       <!-- Collect the nav links, forms, and other content for toggling -->
 
         <ul class="nav navbar-nav">
-          <li><%=link_to "Your Schedule", schedules_path(@user) %></li>
+          <li><%=link_to "Your Schedule", current_user.schedule if current_user != nil %></li>
           <li><a href="#">View All Performances</a></li>
           <li><%= link_to"Artists", artists_path %></li>
           <li><%=link_to"Stages", stages_path%></li>
