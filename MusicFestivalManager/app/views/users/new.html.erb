@@ -1,8 +1,8 @@
 <head>
   <style>
     h2 {
-        color: DeepSkyBlue;
         /* background-color: rgba(255,255,255,0.5); */
+        font-family: Alba Super
     }
     label {
         color: DeepSkyBlue;
@@ -13,7 +13,8 @@
 
 <body background="https://static01.nyt.com/images/2014/06/10/arts/music/20140610-GOVBALL-slide-IBHG/20140610-GOVBALL-slide-IBHG-master1050.jpg">
 
-<h2>Create a new user:</h2>
+<h2><div><span style="color:#ff0000;">C</span><span style="color:#ff2a00;">r</span><span style="color:#ff5500;">e</span><span style="color:#ff7f00;">a</span><span style="color:#ff9f00;">t</span><span style="color:#ffbf00;">e</span><span style="color:#ffdf00;"> </span><span style="color:#ffff00;">a</span><span style="color:#aaff00;"> </span><span style="color:#55ff00;">N</span><span style="color:#00ff00;">e</span><span style="color:#00ff40;">w</span><span style="color:#00ff80;"> </span><span style="color:#00ffbf;">U</span><span style="color:#00ffff;">s</span><span style="color:#00aaff;">e</span><span style="color:#0055ff;">r</span><span style="color:#0000ff;">:</span></div></h2>
+<table>
 <%= form_for @user do |f| %>
   <%= f.label :name, "Username:" %>
   <%= f.text_field :name %><br />
@@ -35,6 +36,7 @@
     <span class="glyphicon glyphicon-user"></span> Create User
   <% end %> 
 <% end %>
+</table>
 
 </body>
 
