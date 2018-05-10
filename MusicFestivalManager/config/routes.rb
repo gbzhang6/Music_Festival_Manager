@@ -14,5 +14,7 @@ Rails.application.routes.draw do
   get '/search', to: 'bookings#find_friend'
   
   get '/schedules/:id/share', to: 'schedules#share_schedule', as: 'share'
+
+  get '/analytics', to: 'analytics#index', as: 'analytics'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
