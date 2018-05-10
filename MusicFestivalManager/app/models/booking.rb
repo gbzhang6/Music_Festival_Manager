@@ -5,7 +5,8 @@ class Booking < ApplicationRecord
   delegate :stage, to: :performance
   delegate :start_time, to: :performance
   delegate :end_time, to: :performance
-  validates :schedule_id, uniqueness: true
+  validate :cannot_have_duplicate_performances
+  # validates :performance_id, uniqueness: true
   # validates :overlapping_time_for_performances
 
   # def overlapping_time_for_performances
@@ -18,6 +19,17 @@ class Booking < ApplicationRecord
   #     end
   #   end
   # end
+
+  def cannot_have_duplicate_performances
+    # byebug
+    if booked_performance_ids.include?(performance_id)
+      errors.add(:performance_id, "Performance is already booked!")
+    end
+  end
+
+  def booked_performance_ids
+    Schedule.find(schedule_id).bookings.map {|el| el.performance.id}
+  end
 
   def artist_name
     self.artist.name
