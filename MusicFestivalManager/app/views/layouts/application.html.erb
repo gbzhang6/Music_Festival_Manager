@@ -49,6 +49,7 @@
         <% end %>
 
         <ul class="nav navbar-nav navbar-right">
+          <li><%= link_to "Analytics", analytics_path %></li>
           <li><%=button_to"Log Out", logout_path, method: "post" if logged_in? %></li>
             </ul>
           </li>
