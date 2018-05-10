@@ -1,5 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    h2 {
+        color: OrangeRed;
+        background-color: rgba(255,255,255,0.7);
+    }
+  </style>
+</head>
+
+<body background="http://www.vanyaland.com/wp-content/uploads/2016/06/6.3.2016_GovBall_Festival_DarraghDandurand_01.jpg">
+
 <h2>The most popular artist is: <%= @most_popular_artist.name %>.</h2>
-<h2>The userwith the most bookings is: <%= @user_with_most_bookings.first_name %> <%= @user_with_most_bookings.last_name %>.</h2>
+<h2>The user with the most bookings is: <%= @user_with_most_bookings.first_name %> <%= @user_with_most_bookings.last_name %>.</h2>
 <h2>Male users account for <%= @male_percentage %>% of all users.</h2>
 <h2>Female users account for <%= @female_count %>% of all users.</h2>
 <h2>Average age of all users is: <%= @users_avg_age %>.</h2>
+
+</body>
+
+</html>
