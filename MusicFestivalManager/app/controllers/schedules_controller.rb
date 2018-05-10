@@ -1,5 +1,6 @@
 class SchedulesController < ApplicationController
-  before_action :find_schedule, only: [:show, :edit, :update, :destroy]
+  before_action :find_schedule, only: [:show, :edit, :update, :destroy, :share_schedule]
+  before_action :user_schedule, :friend_schedule, only: [:share_schedule]
 
   def index
     @schedules = Schedule.all
@@ -42,6 +43,8 @@ class SchedulesController < ApplicationController
     redirect_to schedules_path
   end
 
+  def share_schedule
+  end
 
   private
 
@@ -52,5 +55,14 @@ class SchedulesController < ApplicationController
 
   def schedule_params
     params.require(:schedule).permit(:name, :user_id)
+  end
+
+  def user_schedule
+    user = User.find(session[:user_id])
+    @user_schedule = Schedule.find(user.id)
+  end
+
+  def friend_schedule
+    @friend_schedule = Schedule.find(params[:id])
   end
 end
