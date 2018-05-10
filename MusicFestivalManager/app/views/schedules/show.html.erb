@@ -6,8 +6,8 @@
   <tr>
     <% @schedule.bookings.each do |booking| %>
     <tr>
-      <td> <%= booking.start_time %> </td>
-      <td> <%= booking.end_time %> </td>
+      <td> <%= booking.start_time.strftime("%A, %x at %l:%m%p") %> </td>
+      <td> <%= booking.end_time.strftime("%A, %x at %l:%m%p") %> </td>
       <td> Seeing <%= booking.artist_name %> at the <%= booking.stage_name %> stage. </td>
       <td> <%= button_to "Remove From Schedule",
        booking, method: :delete %> </td>
