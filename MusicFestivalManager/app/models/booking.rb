@@ -49,8 +49,6 @@ class Booking < ApplicationRecord
     self.performance.end_time_to_minutes
   end
 
-
-
   def find_duration
     start_t = self.performance.end_time_to_minutes
     end_t = self.performance.start_time_to_minutes
