@@ -32,7 +32,7 @@ class Booking < ApplicationRecord
   def performance_times_cannot_overlap
     Schedule.find(schedule_id).bookings.each do |booking|
       if booking.duration_range.include?(self.performance.start_time_to_minutes)
-        errors.add(:start_time, "Performance Times Overlap")
+        errors.add(:performance_times, "cannot overlap!") if !errors.include?(:performance_times)
       end
     end
   end
