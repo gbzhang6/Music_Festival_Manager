@@ -10,7 +10,6 @@
   <% @stages.each do |stage| %>
   <tr>
     <% stage.sorted_performances.each do |performance| %>
-
       <td> <%= stage.name %> </td>
       <td> <%= performance.artist.name %> </td>
       <td> <%= performance.start_time.strftime("%A, %x at %l:%m%p") %> </td>

@@ -7,4 +7,16 @@ class Performance < ActiveRecord::Base
     self.all.sort_by {|el| el.start_time}
   end
 
+  def start_time_to_minutes
+    hr_to_minutes = self.start_time.hour * 60
+    minutes = self.start_time.min
+    minutes + hr_to_minutes
+  end
+
+  def end_time_to_minutes
+    hr_to_minutes = self.end_time.hour * 60
+    minutes = self.end_time.min
+    minutes + hr_to_minutes
+  end
+
 end
