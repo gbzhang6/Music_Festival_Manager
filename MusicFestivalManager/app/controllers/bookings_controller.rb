@@ -16,6 +16,7 @@ class BookingsController < ApplicationController
     @booking = Booking.create(performance_id: params[:performance_id], schedule_id: params[:schedule_id])
 
     if @booking.valid?
+      flash[:errors] = nil
       redirect_to schedule_path(@booking.schedule)
     else
       flash[:errors] = @booking.errors.full_messages
