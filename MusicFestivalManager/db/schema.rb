@@ -14,7 +14,6 @@ ActiveRecord::Schema.define(version: 2018_05_08_171800) do
 
   create_table "artists", force: :cascade do |t|
     t.string "name"
-    t.string "description"
   end
 
   create_table "bookings", force: :cascade do |t|

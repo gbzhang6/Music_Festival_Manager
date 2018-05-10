@@ -59,7 +59,7 @@ class SchedulesController < ApplicationController
 
   def user_schedule
     user = User.find(session[:user_id])
-    @user_schedule = Schedule.find(user.id)
+    @user_schedule = user.schedule
   end
 
   def friend_schedule

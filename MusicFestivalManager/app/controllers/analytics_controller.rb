@@ -18,8 +18,8 @@ class AnalyticsController < ApplicationController
     male_count = User.where(gender: "Male").count
     female_count = User.where(gender: "Female").count
 
-    @male_percentage = (male_count / all_count * 100).round(4)
-    @female_count = (female_count / all_count * 100).round(4)
+    @male_percentage = (male_count.to_f / all_count * 100).round(4)
+    @female_count = (female_count.to_f / all_count * 100).round(4)
   end
 
   def user_avg_age
