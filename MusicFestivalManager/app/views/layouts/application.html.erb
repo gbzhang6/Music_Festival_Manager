@@ -18,8 +18,7 @@
       <!-- Collect the nav links, forms, and other content for toggling -->
 
         <ul class="nav navbar-nav">
-          <li class="active"><a href="#">HOME</a></li>
-          <li><%=link_to "Your Schedule", schedules_path%></li>
+          <li><%= link_to "Your Schedule", @user.schedule if @user  && session[:user_id] %></li>
           <li><a href="#">View All Performances</a></li>
           <li><%= link_to"Artists", artists_path %></li>
           <li><%=link_to"Stages", stages_path%></li>
