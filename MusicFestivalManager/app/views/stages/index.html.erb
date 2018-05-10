@@ -1,22 +1,60 @@
-<table><h2>Performance Stages</h2>
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+    }
 
-<tr>
-  <th>Stage</th>
-  <th>Artist</th>
-  <th>Start Time</th>
-  <th>End Time</th>
-  <th>Add to My Schedule</th>
-</tr>
-  <% @stages.each do |stage| %>
-  <tr>
-    <% stage.sorted_performances.each do |performance| %>
-      <td> <%= stage.name %> </td>
-      <td> <%= performance.artist.name %> </td>
-      <td> <%= performance.start_time.strftime("%A, %x at %l:%m%p") %> </td>
-      <td> <%= performance.end_time.strftime("%A, %x at %l:%m%p") %> </td>
-      <td> <%= button_to "Add to My Schedule", bookings_path(:performance_id => performance, :schedule_id => @user.schedule)%> </td>
+    td, th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+        font-size: 16px;
+    }
+
+  </style>
+</head>
+
+<body>
+  <h1> <%= current_user.first_name %>'s Governors' Ball Schedule Planner</h1>
+
+  <h2>Performance Stages</h2>
+
+  <table>
+    <tr>
+      <th>Stage</th>
+      <th>Artist</th>
+      <th>Start Time</th>
+      <th>End Time</th>
+      <th>Add Performance</th>
     </tr>
-    <% end %>
-  <% end %>
-</table>
-<%#= render "common/nav_all" %>
+
+
+    <tr>
+      <% @stages.each do |stage| %>
+        <tr>
+          <% stage.sorted_performances.each do |performance| %>
+            <td> <%= stage.name %> </td>
+            <td> <%= performance.artist.name %> </td>
+            <td> <%= performance.start_time.strftime("%A, %x at %l:%m%p") %> </td>
+            <td> <%= performance.end_time.strftime("%A, %x at %l:%m%p") %> </td>
+            <td> <%= button_to "Add to My Schedule", bookings_path(:performance_id => performance, :schedule_id => @user.schedule)%> </td>
+          </tr>
+          <% end %>
+      <% end %>
+      <% if flash[:errors] %>
+          <% flash[:errors].each do |error| %>
+              <%= error %>
+          <% end %>
+      <% end  %>
+      <br>
+    </tr>
+  </tr>
+  </table>
+
+</body>
+
+</html>

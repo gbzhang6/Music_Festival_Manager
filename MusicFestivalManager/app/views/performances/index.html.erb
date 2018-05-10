@@ -1,20 +1,75 @@
-<table><h2>Performance Times</h2>
+<!DOCTYPE html>
+<head>
+  <style>
+    table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+    }
 
-<tr>
-  <th>Artist</th>
-  <th>Stage</th>
-  <th>Start Time</th>
-  <th>End Time</th>
-  <th>Add to My Schedule</th>
-</tr>
-  <% @performances.each do |performance| %>
-<tr>
-  <td> <%= performance.artist.name %> </td>
-  <td> <%= performance.stage.name %> </td>
-  <td> <%= performance.start_time.strftime("%A, %x at %l:%m%p") %> </td>
-  <td> <%= performance.end_time.strftime("%A, %x at %l:%m%p") %> </td>
-  <td> <%= button_to "Add to My Schedule", bookings_path(:performance_id => performance, :schedule_id => @user.schedule) %> </td>
-</tr>
-  <% end %>
-</table>
-<%#= (:performance_id => performance, :schedule_id => @user.schedule) %>
+    td, th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+        font-size: 16px;
+        background-color: rgba(255,255,255,0.5);
+        color: black;
+    }
+
+    tr:nth-child(even) {
+        background-color: #dddddd;
+    }
+
+    h1 {
+        color: DeepSkyBlue;
+        /* background-color: rgba(255,255,255,0.5); */
+    }
+
+    h2 {
+        color: DeepSkyBlue;
+        /* background-color: rgba(255,255,255,0.5); */
+    }
+
+  </style>
+</head>
+
+<body>
+  <h1> <%= current_user.first_name %>'s Governors' Ball Schedule Planner</h1>
+
+  <h2>Performance Times</h2>
+
+  <table>
+    <tr>
+      <th>Start Time</th>
+      <th>End Time</th>
+      <th>Artist</th>
+      <th>Stage</th>
+      <th>Add Performance</th>
+    </tr>
+
+
+    <tr>
+      <% @performances.each do |performance| %>
+        <tr>
+          <td> <%= performance.start_time.strftime("%A at %l:%m %p") %> </td>
+          <td> <%= performance.end_time.strftime("%A at %l:%m %p") %> </td>
+          <td> <%= performance.artist.name %> </td>
+          <td> <%= performance.stage.name %> </td>
+          <td> <%= button_to "Add to My Schedule", bookings_path(:performance_id => performance, :schedule_id => @user.schedule) %> </td>
+        </tr>
+      <% end %>
+      <% if flash[:errors] %>
+          <% flash[:errors].each do |error| %>
+              <%= error %>
+          <% end %>
+      <% end  %>
+      <br>
+    </tr>
+  </tr>
+  </table>
+
+<body background="https://www.nycpretty.com/wp-content/uploads/2017/06/purple-lights-gov-ball-festival-crowds-nyc.jpg">
+
+</body>
+
+</html>
