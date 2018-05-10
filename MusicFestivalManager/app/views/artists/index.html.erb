@@ -1,4 +1,4 @@
-
+<!--
 <table><h2>Artist Performances</h2>
 
 <tr>
@@ -19,6 +19,69 @@
      bookings_path(performance_id: artist.performance, schedule_id: current_user.schedule) %> </td>
   </tr>
   <% end %>
-</table>
+</table> -->
 
 <%#= render "common/nav_all" %>
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    td, th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+        font-size: 16px;
+    }
+
+  </style>
+</head>
+
+<body>
+  <h1> <%= current_user.first_name %>'s Governors' Ball Schedule Planner</h1>
+
+  <h2>Artist Performances</h2>
+
+  <table>
+    <tr>
+      <th>Artist</th>
+      <th>Stage</th>
+      <th>Start Time</th>
+      <th>End Time</th>
+      <th>Add to My Schedule</th>
+    </tr>
+
+
+    <tr>
+      <% @artists.each do |artist| %>
+      <tr>
+        <td> <%= artist.name %> </td>
+        <td> <%= artist.performance ? artist.performance.stage.name : "------------" %> </td>
+        <td> <%= artist.performance ? artist.performance.start_time.strftime("%A, %x at %l:%m%p") : "------------" %> </td>
+        <td> <%= artist.performance ? artist.performance.end_time.strftime("%A, %x at %l:%m%p") : "------------" %> </td>
+        <td> <%= button_to "Add to My Schedule", bookings_path(performance_id: artist.performance, schedule_id: current_user.schedule) %> </td>
+      </tr>
+      <% end %>
+      <% if flash[:errors] %>
+          <% flash[:errors].each do |error| %>
+              <%= error %>
+          <% end %>
+      <% end  %>
+      <br>
+    </tr>
+  </tr>
+  </table>
+
+</body>
+
+</html>
