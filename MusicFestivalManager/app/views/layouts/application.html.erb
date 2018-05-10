@@ -24,7 +24,7 @@
           <li><%= link_to"Artists", artists_path %></li>
           <li><%=link_to"Stages", stages_path%></li>
           <li><%=link_to"Performance Times", performances_path %></li>
-          <li><%=link_to"Log Out", logout_path, method: "post" if @user %></li>
+          <li><%=link_to"Log Out", logout_path, method: "post" if logged_in? %></li>
 
         </ul>
         <%= form_tag("/search", method: "get") do %>
