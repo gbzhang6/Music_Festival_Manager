@@ -27,7 +27,7 @@
 
         </ul>
         <%= form_tag("/search", method: "get") do %>
-          <%= label_tag(:friend_name, "Search for:") %>
+          <%= label_tag(:friend_name, "Search Users:") %>
           <%= text_field_tag(:friend_name) %>
           <%= submit_tag("Search") %>
         <% end %>
