@@ -1,4 +1,4 @@
-<h1>Welcome to the Governors' Ball Schedule Planner</h1>
+<h1> <%= current_user.first_name %>'s Governors' Ball Schedule Planner</h1>
 <table>
   <tr>
     <th>Your Current Schedule</th>
@@ -9,6 +9,9 @@
       <td> <%= booking.start_time %> </td>
       <td> <%= booking.end_time %> </td>
       <td> Seeing <%= booking.artist_name %> at the <%= booking.stage_name %> stage. </td>
+      <td> <%= button_to "Remove From Schedule",
+       booking, method: :delete %> </td>
+    </tr>
       <% end %>
 
       <% if flash[:errors] %>
@@ -17,9 +20,3 @@
     </tr>
   </tr>
 </table>
-
-<%= form_tag("/search", method: "get") do %>
-  <%= label_tag(:friend_name, "Search for:") %>
-  <%= text_field_tag(:friend_name) %>
-  <%= submit_tag("Search") %>
-<% end %>

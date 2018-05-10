@@ -1,8 +1,6 @@
 class Schedule < ActiveRecord::Base
   has_many :bookings
   has_many :performances, through: :bookings
-  has_many :transactions
-  has_many :vendors, through: :transactions
   belongs_to :user
 
   def bookings_by_time

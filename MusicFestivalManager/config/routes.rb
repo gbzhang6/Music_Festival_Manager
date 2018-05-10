@@ -1,8 +1,5 @@
 Rails.application.routes.draw do
-  resources :items
-  resources :vendors
   resources :artists
-  resources :staffs
   resources :bookings
   resources :users
   resources :performances

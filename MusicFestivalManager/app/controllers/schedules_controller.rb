@@ -13,7 +13,6 @@ class SchedulesController < ApplicationController
   end
 
   def create
-    byebug
     @schedule = Schedule.create(schedule_params)
 
     if @schedule.valid?

@@ -6,8 +6,6 @@ class Booking < ApplicationRecord
   delegate :start_time, to: :performance
   delegate :end_time, to: :performance
   validate :cannot_have_duplicate_performances
-  # validates :performance_id, uniqueness: true
-  # validates :overlapping_time_for_performances
 
   # def overlapping_time_for_performances
   #   #all bookings for specific instance of user
