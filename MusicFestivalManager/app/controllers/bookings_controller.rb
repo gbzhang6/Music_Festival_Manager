@@ -46,7 +46,8 @@ class BookingsController < ApplicationController
     @user = User.find(session[:user_id])
     if User.all_names.include?(params[:friend_name])
       @friend_user = User.find_by(name: params[:friend_name])
-      redirect_to schedule_path(@friend_user.schedule)
+      byebug
+      redirect_to share_path(@friend_user.schedule)
     else
       flash[:errors] = "User does not exist"
       redirect_to schedule_path(@user.schedule)
