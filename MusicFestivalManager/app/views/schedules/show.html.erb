@@ -17,9 +17,3 @@
     </tr>
   </tr>
 </table>
-
-<%= form_tag("/search", method: "get") do %>
-  <%= label_tag(:friend_name, "Search for:") %>
-  <%= text_field_tag(:friend_name) %>
-  <%= submit_tag("Search") %>
-<% end %>
