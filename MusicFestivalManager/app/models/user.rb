@@ -9,12 +9,8 @@ class User < ApplicationRecord
   has_many :artists, through: :performances
   has_many :stages, through: :performances
 
-  def all_vendors
-    self.schedule.vendors
-  end
-
   def self.all_names
-    self.all.map {|el| el.name}
+    self.all.map(&:name)
   end
 
 end
