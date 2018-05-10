@@ -1,3 +1,20 @@
+<head>
+  <style>
+    h2 {
+        color: DeepSkyBlue;
+        /* background-color: rgba(255,255,255,0.5); */
+    }
+    label {
+        color: DeepSkyBlue;
+        /* background-color: rgba(255,255,255,0.5); */
+    }
+  </style>
+</head>
+
+<body background="https://www.edmsauce.com/wp-content/uploads/2017/01/Gov-Ball-2016.jpg">
+
 <h2>Welcome, <%= @user.first_name %>!</h2>
 
 <label>Your schedule: <%= link_to @user.schedule.name, schedule_path(@user.schedule) %></label>
+
+</body>
