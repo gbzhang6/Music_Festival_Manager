@@ -49,8 +49,8 @@ class SchedulesController < ApplicationController
     @schedule = Schedule.find(params[:id])
   end
 
-  def method_name
-    params.require(:schedule).permit(:booking_id, :visit_id)
+  def schedule_params
+    params.require(:schedule).permit(:booking_id, :schedule_id)
   end
 
 end
