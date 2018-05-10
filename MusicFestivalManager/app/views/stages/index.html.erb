@@ -9,7 +9,7 @@
 </tr>
   <% @stages.each do |stage| %>
   <tr>
-    <% stage.performances.each do |performance| %>
+    <% stage.sorted_performances.each do |performance| %>
 
       <td> <%= stage.name %> </td>
       <td> <%= performance.artist.name %> </td>

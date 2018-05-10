@@ -21,9 +21,8 @@ class Booking < ApplicationRecord
   # end
 
   def cannot_have_duplicate_performances
-    # byebug
     if booked_performance_ids.include?(performance_id)
-      errors.add(:performance_id, "Performance is already booked!")
+      self.errors.add(:performance_id, "is already booked!")
     end
   end
 

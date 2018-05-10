@@ -3,7 +3,7 @@ class ArtistsController < ApplicationController
   before_action :find_user, only: [:show, :index, :edit, :update, :destroy]
 
   def index
-    @artists = Artist.all
+    @artists = Artist.sort_by_name
   end
 
   def show
