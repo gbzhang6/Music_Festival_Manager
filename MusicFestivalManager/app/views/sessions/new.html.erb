@@ -1,33 +1,58 @@
+<!DOCTYPE html>
+<html>
 <head>
   <style>
     h2 {
         color: DeepSkyBlue;
-        /* background-color: rgba(255,255,255,0.5); */
-        font-family: Alba Super
+        font-family: Alba Super;
+        text-align: center;
+
     }
+
     label {
         color: DeepSkyBlue;
-        /* background-color: rgba(255,255,255,0.5); */
+        text-align: center;
+        text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
     }
+
+    input, textarea, select, button {
+        width : 150px;
+        margin: 0;
+        box-sizing: border-box;
+        vertical-align: left;
+    }
+
+    form {
+      text-align: center;
+      text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    }
+
+    div {
+        vertical-align:  left;
+    }
+
   </style>
 </head>
 
 <body background="https://boweryboogie-wpengine.netdna-ssl.com/content/uploads/2017/06/govball-2017-18_wm.jpg">
 
 <h2><div><span style="color:#ff0000;">S</span><span style="color:#ff7f00;">i</span><span style="color:#ffbf00;">g</span><span style="color:#ffff00;">n</span><span style="color:#00ff00;"> </span><span style="color:#00ff80;">I</span><span style="color:#00ffff;">n</span><span style="color:#0000ff;"></span></div></h2>
+<br>
+
 <%= form_tag sessions_path do %>
   <%= label_tag :name %>
-  <%= text_field_tag :name %>
+  <div><%= text_field_tag :name %></div><br>
   <%= label_tag :password %>
-  <%= password_field_tag :password %>
+  <div><%= password_field_tag :password %></div><br><br>
   <%= button_tag(type: "submit", class: "btn btn-primary", name: "create", value: "conceal") do %>
     <span class="glyphicon glyphicon-user"></span> Log In
-  <% end %> 
+  <% end %>
 <% end %>
+
 
 <br />
 
 <label><%= link_to "Or click to create a new account", new_user_path %></label>
 
 </body>
-
+</html>
