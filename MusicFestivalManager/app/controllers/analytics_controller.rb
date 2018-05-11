@@ -32,13 +32,8 @@ class AnalyticsController < ApplicationController
   end
 
   def time_with_most_perf
-    # hash = Hash.new(0)
-    #
-    # Performance.all.each do |performance|
-    #   hash[performance.id] += 1
-    # end
-    #
-    # most_booked_perf = hash.sort_by {|key, value| value}.reverse.first
-    # @time_with_most_perf = Performance.find(most_booked_perf.keys.first)
+    hash = Hash.new(0)
+    Performance.all.each {|performance| hash[performance.start_time] += 1}
+    @time_with_most_perf = hash.sort_by {|key, value| value}.reverse.first
   end
 end
