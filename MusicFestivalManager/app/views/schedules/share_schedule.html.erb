@@ -18,21 +18,23 @@
     tr:nth-child(even) {
         background-color: #dddddd;
     }
-    
+
     h1 {
-        color: DeepSkyBlue;
+        color: Red;
         /* background-color: rgba(255,255,255,0.5); */
+        font-family: Alba Super
     }
     h2 {
         color: DeepSkyBlue;
         /* background-color: rgba(255,255,255,0.5); */
+        font-family: Alba Super
     }
   </style>
 </head>
 
 <body background="http://www.passtheaux.co/wp-content/uploads/2017/06/governors-ball-teens-chris-lazzaro-1024x683.jpg">
-
-<h1> <%= @friend_schedule.user.first_name %>'s Governors' Ball Schedule Planner</h1>
+<br>
+<h1> <%= @friend_schedule.user.first_name %><span style="color:#ff4f00;">'</span><span style="color:#ff5f00;">s</span><span style="color:#ff6f00;"> </span><span style="color:#ff7f00;">G</span><span style="color:#ff8f00;">o</span><span style="color:#ff9f00;">v</span><span style="color:#ffaf00;">e</span><span style="color:#ffbf00;">r</span><span style="color:#ffcf00;">n</span><span style="color:#ffdf00;">o</span><span style="color:#ffef00;">r</span><span style="color:#ffff00;">s</span><span style="color:#dbff00;">'</span><span style="color:#b6ff00;"> </span><span style="color:#92ff00;">B</span><span style="color:#6dff00;">a</span><span style="color:#49ff00;">l</span><span style="color:#24ff00;">l</span><span style="color:#00ff00;"> </span><span style="color:#00ff20;">S</span><span style="color:#00ff40;">c</span><span style="color:#00ff60;">h</span><span style="color:#00ff80;">e</span><span style="color:#00ff9f;">d</span><span style="color:#00ffbf;">u</span><span style="color:#00ffdf;">l</span><span style="color:#00ffff;">e</span><span style="color:#00dfff;"> </span><span style="color:#00bfff;">P</span><span style="color:#009fff;">l</span><span style="color:#0080ff;">a</span><span style="color:#0060ff;">n</span><span style="color:#0040ff;">n</span><span style="color:#0020ff;">e</span><span style="color:#0000ff;">r</span></h1></h1>
 <table>
   <tr>
     <th>Your Current Schedule</th>
@@ -55,7 +57,7 @@
 
 <br />
 
-<h1> <%= current_user.first_name %>'s Governors' Ball Schedule Planner</h1>
+<h1> <%= current_user.first_name %><span style="color:#ff4f00;">'</span><span style="color:#ff5f00;">s</span><span style="color:#ff6f00;"> </span><span style="color:#ff7f00;">G</span><span style="color:#ff8f00;">o</span><span style="color:#ff9f00;">v</span><span style="color:#ffaf00;">e</span><span style="color:#ffbf00;">r</span><span style="color:#ffcf00;">n</span><span style="color:#ffdf00;">o</span><span style="color:#ffef00;">r</span><span style="color:#ffff00;">s</span><span style="color:#dbff00;">'</span><span style="color:#b6ff00;"> </span><span style="color:#92ff00;">B</span><span style="color:#6dff00;">a</span><span style="color:#49ff00;">l</span><span style="color:#24ff00;">l</span><span style="color:#00ff00;"> </span><span style="color:#00ff20;">S</span><span style="color:#00ff40;">c</span><span style="color:#00ff60;">h</span><span style="color:#00ff80;">e</span><span style="color:#00ff9f;">d</span><span style="color:#00ffbf;">u</span><span style="color:#00ffdf;">l</span><span style="color:#00ffff;">e</span><span style="color:#00dfff;"> </span><span style="color:#00bfff;">P</span><span style="color:#009fff;">l</span><span style="color:#0080ff;">a</span><span style="color:#0060ff;">n</span><span style="color:#0040ff;">n</span><span style="color:#0020ff;">e</span><span style="color:#0000ff;">r</span></h1></h1>
 <table>
   <tr>
     <th>Your Current Schedule</th>
@@ -66,8 +68,9 @@
       <td> <%= booking.start_time %> </td>
       <td> <%= booking.end_time %> </td>
       <td> Seeing <%= booking.artist_name %> at the <%= booking.stage_name %> stage. </td>
-      <td> <%= button_to "Remove From Schedule",
-       booking, method: :delete %> </td>
+      <td> <%= button_to booking, method: :delete, class: 'btn btn-danger' do %>
+            <i class="glyphicon glyphicon-trash"></i> Remove From Schedule
+          <% end %> </td>
     </tr>
       <% end %>
 
@@ -79,3 +82,4 @@
 </table>
 
 </body>
+

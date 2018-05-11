@@ -58,7 +58,10 @@
           <td> <%= booking.end_time.strftime("%A, %x at %l:%m %p") %> </td>
           <td> <%= booking.artist_name %> </td>
           <td> <%= booking.stage_name %> </td>
-          <td> <%= button_to "Remove From Schedule", booking, method: :delete %> </td>
+          <td> <%= button_to booking, method: :delete, class: 'btn btn-danger' do %>
+            <i class="glyphicon glyphicon-trash"></i> Remove From Schedule
+          <% end %> </td>
+
         </tr>
       <% end %>
       <% if flash[:errors] %>
