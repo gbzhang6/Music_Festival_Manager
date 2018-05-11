@@ -25,7 +25,6 @@
 
 <h2><div><span style="color:#ff0000;">C</span><span style="color:#ff2a00;">r</span><span style="color:#ff5500;">e</span><span style="color:#ff7f00;">a</span><span style="color:#ff9f00;">t</span><span style="color:#ffbf00;">e</span><span style="color:#ffdf00;"> </span><span style="color:#ffff00;">a</span><span style="color:#aaff00;"> </span><span style="color:#55ff00;">N</span><span style="color:#00ff00;">e</span><span style="color:#00ff40;">w</span><span style="color:#00ff80;"> </span><span style="color:#00ffbf;">U</span><span style="color:#00ffff;">s</span><span style="color:#00aaff;">e</span><span style="color:#0055ff;">r</span><span style="color:#0000ff;">:</span></div></h2>
 <%= form_for @user do |f| %>
-<form>
   <%= f.label :name, "Username:" %>
   <div><%= f.text_field :name %><br /></div>
   <%= f.label :first_name %>
@@ -44,8 +43,7 @@
   <div><%= f.password_field :password_confirmation %></div><br />
   <%= button_tag(type: "submit", class: "btn btn-primary", name: "create", value: "conceal") do %>
     <span class="glyphicon glyphicon-user"></span> Create User
-  <% end %>
-</form>
+  <% end %><br />
 <% end %>
 
 </body>
