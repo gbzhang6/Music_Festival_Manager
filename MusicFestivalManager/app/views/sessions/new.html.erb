@@ -20,7 +20,9 @@
   <%= text_field_tag :name %>
   <%= label_tag :password %>
   <%= password_field_tag :password %>
-  <%= submit_tag "Log In", class: 'btn btn-primary' %>
+  <%= button_tag(type: "submit", class: "btn btn-primary", name: "create", value: "conceal") do %>
+    <span class="glyphicon glyphicon-user"></span> Log In
+  <% end %> 
 <% end %>
 
 <br />
@@ -28,3 +30,4 @@
 <label><%= link_to "Or click to create a new account", new_user_path %></label>
 
 </body>
+
