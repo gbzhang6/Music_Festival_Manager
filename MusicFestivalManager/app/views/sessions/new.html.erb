@@ -6,7 +6,11 @@
         color: DeepSkyBlue;
         font-family: Alba Super;
         text-align: center;
+    }
 
+    h3 {
+        color: Red;
+        text-align: center;
     }
 
     label {
@@ -49,6 +53,11 @@
   <% end %>
 <% end %>
 
+<% if flash[:errors] %>
+  <% flash[:errors].each do |error| %>
+    <h3><%= error %></h3>
+  <% end %>
+<% end  %>
 
 <br />
 

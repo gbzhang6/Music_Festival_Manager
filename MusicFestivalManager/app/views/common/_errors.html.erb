@@ -1,10 +1,32 @@
-<% if flash[:errors] %>
-  <h3>You have some errors:</h3>
-  <ul>
-    <% flash[:errors].each do |error| %>
-      <li><%= error %></li>
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      h3 {
+          color: DeepSkyBlue;
+          text-align: center;
+          text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+      }
+      label {
+          color: DeepSkyBlue;
+          text-align: center;
+          text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+      }
+    </style>
+  </head>
+
+  <body>
+
+    <% if flash[:errors] %>
+      <h3>You have some errors:</h3>
+      <ul>
+        <% flash[:errors].each do |error| %>
+          <h3><li><%= error %></li></h3>
+        <% end %>
+      </ul>
+      <%= end_text %>
+      <br />
     <% end %>
-  </ul>
-  <%= end_text %>
-  <br />
-<% end %>
+
+  </body>
+</html>
