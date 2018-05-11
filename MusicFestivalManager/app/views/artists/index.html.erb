@@ -55,7 +55,7 @@
         <td> <%= artist.performance ? artist.performance.stage.name : "------------" %> </td>
         <td> <%= artist.performance ? artist.performance.start_time.strftime("%A, %x at %l:%m%p") : "------------" %> </td>
         <td> <%= artist.performance ? artist.performance.end_time.strftime("%A, %x at %l:%m%p") : "------------" %> </td>
-        <td> <%= button_to  bookings_path(performance_id: artist.performance, schedule_id: current_user.schedule), class: 'btn btn-primary'  do %>
+        <td> <%= button_to  bookings_path(performance_id: artist.performance, schedule_id: current_user.schedule), class: 'btn btn-success'  do %>
           <i class="glyphicon glyphicon-plus"></i> Add to My Schedule
         <% end %> </td>
       </tr>
