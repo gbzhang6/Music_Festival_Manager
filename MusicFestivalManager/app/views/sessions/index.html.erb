@@ -1,0 +1,9 @@
+<p>The Governors Ball Music Festival (commonly known as Governors Ball or Gov Ball) is a multi-day music festival held on Randall's Island in New York City. Launched in 2011, the festival features an array of genres and styles of music, including rock, electronic, hip-hop, indie, Americana, pop, folk, and more. It is produced by Founders Entertainment, a festival promotion company based in New York City, which also produces The Meadows Music & Arts Festival. Aside from the wide variety of music, the festival features a multitude of popular New York restaurants and food trucks, as well as activities and games.<p>
+
+<br />
+
+<% if logged_in? %>
+  <%= link_to "Go to your schedule", schedule_path(current_user.schedule.id) %>
+<% else %>
+  <%= link_to "Log In", login_path %>
+<% end %>
