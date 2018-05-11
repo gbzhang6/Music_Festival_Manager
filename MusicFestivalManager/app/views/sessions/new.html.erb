@@ -32,7 +32,8 @@
     }
 
     div {
-        vertical-align:  left;
+      vertical-align:  left;
+      text-align: center;
     }
 
   </style>
@@ -44,7 +45,7 @@
 <br>
 
 <%= form_tag sessions_path do %>
-  <%= label_tag :name %>
+  <%= label_tag :name, "Username" %>
   <div><%= text_field_tag :name %></div><br>
   <%= label_tag :password %>
   <div><%= password_field_tag :password %></div><br><br>
@@ -61,7 +62,7 @@
 
 <br />
 
-<label><%= link_to "Or click to create a new account", new_user_path %></label>
+<div><label><%= link_to "Or click to create a new account", new_user_path %></label></div>
 
 </body>
 </html>

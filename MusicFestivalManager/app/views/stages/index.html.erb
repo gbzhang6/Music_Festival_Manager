@@ -20,13 +20,14 @@
     h1 {
         color: Red;
         text-align: center;
-        font-family: Alba Super
+        font-family: Alba Super;
+        text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
     }
 
     h2 {
         color: DeepSkyBlue;
-        /* background-color: rgba(255,255,255,0.5); */
-        font-family: Alba Super
+        font-family: Alba Super;
+        text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
     }
 
   </style>
@@ -54,8 +55,8 @@
           <% stage.sorted_performances.each do |performance| %>
             <td> <%= stage.name %> </td>
             <td> <%= performance.artist.name %> </td>
-            <td> <%= performance.start_time.strftime("%A, %x at %l:%m%p") %> </td>
-            <td> <%= performance.end_time.strftime("%A, %x at %l:%m%p") %> </td>
+            <td> <%= performance.start_time.strftime("%A at %l:%m%p") %> </td>
+            <td> <%= performance.end_time.strftime("%A at %l:%m%p") %> </td>
             <td> <%= button_to  bookings_path(:performance_id => performance, :schedule_id => @user.schedule), class: 'btn btn-primary'  do %>
               <i class="glyphicon glyphicon-plus"></i> Add to My Schedule
             <% end %> </td>
