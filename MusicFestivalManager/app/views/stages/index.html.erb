@@ -55,15 +55,9 @@
           <% stage.sorted_performances.each do |performance| %>
             <td> <%= stage.name %> </td>
             <td> <%= performance.artist.name %> </td>
-<<<<<<< HEAD
             <td> <%= performance.start_time.strftime("%A at %l:%m%p") %> </td>
             <td> <%= performance.end_time.strftime("%A at %l:%m%p") %> </td>
             <td> <%= button_to  bookings_path(:performance_id => performance, :schedule_id => @user.schedule), class: 'btn btn-success'  do %>
-=======
-            <td> <%= performance.start_time.strftime("%A at %l:%M %p") %> </td>
-            <td> <%= performance.end_time.strftime("%A at %l:%M %p") %> </td>
-            <td> <%= button_to  bookings_path(:performance_id => performance, :schedule_id => @user.schedule), class: 'btn btn-primary'  do %>
->>>>>>> 5ef9b43f7b89eb377a42cd0b7fe9e4b9d9759bec
               <i class="glyphicon glyphicon-plus"></i> Add to My Schedule
             <% end %> </td>
 
