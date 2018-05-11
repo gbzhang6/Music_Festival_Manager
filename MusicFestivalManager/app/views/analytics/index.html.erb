@@ -20,6 +20,7 @@
 <h2>Male users account for <span><%= @male_percentage %>%</span> of all users.</h2>
 <h2>Female users account for <span><%= @female_count %>%</span> of all users.</h2>
 <h2>Average age of all users is: <span><%= @users_avg_age %></span>.</h2>
+<h2>The most booked starting time is: <span><%= @time_with_most_perf.first.hour %>:<%= @time_with_most_perf.first.min %></span> with <span><%= @time_with_most_perf.last %></span> bookings.</h2>
 
 </body>
 
