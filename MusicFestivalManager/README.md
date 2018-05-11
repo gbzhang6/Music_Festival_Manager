@@ -50,12 +50,7 @@ Performance/Artist/Stage/Bookings
   5. schedule is a collection of all the booking
 
 To Do list
-1. Analytics - Shun WIP
 2. 10 specs - Billy
-3. Fix rendering of Performances when not logged in? - Gui
-4. CSS styling - Yong-Nicholas
-5. Manually update seed data with Gov ball - Gui
-
 
 
 * ...

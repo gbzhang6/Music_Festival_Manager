@@ -68,8 +68,9 @@
       <td> <%= booking.start_time %> </td>
       <td> <%= booking.end_time %> </td>
       <td> Seeing <%= booking.artist_name %> at the <%= booking.stage_name %> stage. </td>
-      <td> <%= button_to "Remove From Schedule",
-       booking, method: :delete %> </td>
+      <td> <%= button_to booking, method: :delete, class: 'btn btn-danger' do %>
+            <i class="glyphicon glyphicon-trash"></i> Remove From Schedule
+          <% end %> </td>
     </tr>
       <% end %>
 
@@ -81,3 +82,4 @@
 </table>
 
 </body>
+

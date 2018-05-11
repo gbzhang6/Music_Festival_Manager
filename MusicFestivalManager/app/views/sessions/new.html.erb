@@ -14,13 +14,15 @@
 
 <body background="https://boweryboogie-wpengine.netdna-ssl.com/content/uploads/2017/06/govball-2017-18_wm.jpg">
 
-<h2><div><span style="color:#ff0000;">S</span><span style="color:#ff7f00;">i</span><span style="color:#ffbf00;">g</span><span style="color:#ffff00;">n</span><span style="color:#00ff00;"> </span><span style="color:#00ff80;">I</span><span style="color:#00ffff;">n</span><span style="color:#0000ff;">:</span></div></h2>
+<h2><div><span style="color:#ff0000;">S</span><span style="color:#ff7f00;">i</span><span style="color:#ffbf00;">g</span><span style="color:#ffff00;">n</span><span style="color:#00ff00;"> </span><span style="color:#00ff80;">I</span><span style="color:#00ffff;">n</span><span style="color:#0000ff;"></span></div></h2>
 <%= form_tag sessions_path do %>
   <%= label_tag :name %>
   <%= text_field_tag :name %>
   <%= label_tag :password %>
   <%= password_field_tag :password %>
-  <%= submit_tag "Log In", class: 'btn btn-primary' %>
+  <%= button_tag(type: "submit", class: "btn btn-primary", name: "create", value: "conceal") do %>
+    <span class="glyphicon glyphicon-user"></span> Log In
+  <% end %> 
 <% end %>
 
 <br />
@@ -28,3 +30,4 @@
 <label><%= link_to "Or click to create a new account", new_user_path %></label>
 
 </body>
+
