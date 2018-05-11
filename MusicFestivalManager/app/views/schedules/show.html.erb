@@ -60,8 +60,8 @@
     <tr>
       <% @schedule.each do |booking| %>
         <tr>
-          <td> <%= booking.start_time.strftime("%A at %l:%m %p") %> </td>
-          <td> <%= booking.end_time.strftime("%A, %x at %l:%m %p") %> </td>
+          <td> <%= booking.start_time.strftime("%A at %l:%M %p") %> </td>
+          <td> <%= booking.end_time.strftime("%A, %x at %l:%M %p") %> </td>
           <td> <%= booking.artist_name %> </td>
           <td> <%= booking.stage_name %> </td>
           <td> <%= button_to booking, method: :delete, class: 'btn btn-danger' do %>
