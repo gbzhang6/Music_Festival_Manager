@@ -55,8 +55,8 @@
           <% stage.sorted_performances.each do |performance| %>
             <td> <%= stage.name %> </td>
             <td> <%= performance.artist.name %> </td>
-            <td> <%= performance.start_time.strftime("%A at %l:%m%p") %> </td>
-            <td> <%= performance.end_time.strftime("%A at %l:%m%p") %> </td>
+            <td> <%= performance.start_time.strftime("%A at %l:%M %p") %> </td>
+            <td> <%= performance.end_time.strftime("%A at %l:%M %p") %> </td>
             <td> <%= button_to  bookings_path(:performance_id => performance, :schedule_id => @user.schedule), class: 'btn btn-primary'  do %>
               <i class="glyphicon glyphicon-plus"></i> Add to My Schedule
             <% end %> </td>
