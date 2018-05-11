@@ -8,7 +8,7 @@ class User < ApplicationRecord
   has_many :stages, through: :performances
 
   def self.all_names
-    self.all.map(&:first_name)
+    self.all.map(&:name)
   end
 
 end
