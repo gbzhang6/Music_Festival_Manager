@@ -34,6 +34,12 @@
         font-family: Alba Super;
     }
 
+    h3 {
+        color: Red;
+        text-align: center;
+        text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    }
+
   </style>
 </head>
 
@@ -61,14 +67,15 @@
           <td> <%= button_to booking, method: :delete, class: 'btn btn-danger' do %>
             <i class="glyphicon glyphicon-trash"></i> Remove From Schedule
           <% end %> </td>
-
         </tr>
       <% end %>
-      <% if flash[:errors] %>
-          <% flash[:errors].each do |error| %>
-              <%= error %>
-          <% end %>
-      <% end  %>
+
+<% if flash[:errors] %>
+  <% flash[:errors].each do |error| %>
+    <h3><%= error %></h3>
+  <% end %>
+<% end  %>
+
       <br>
     </tr>
   </tr>

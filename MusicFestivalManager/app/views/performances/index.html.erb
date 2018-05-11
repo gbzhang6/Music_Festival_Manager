@@ -54,7 +54,7 @@
           <td> <%= performance.end_time.strftime("%A at %l:%M %p") %> </td>
           <td> <%= performance.artist.name %> </td>
           <td> <%= performance.stage.name %> </td>
-          <td> <%= button_to  bookings_path(:performance_id => performance, :schedule_id => @user.schedule), class: 'btn btn-primary'  do %>
+          <td> <%= button_to  bookings_path(:performance_id => performance, :schedule_id => @user.schedule), class: 'btn btn-success'  do %>
             <i class="glyphicon glyphicon-plus"></i> Add to My Schedule
           <% end %> </td>
 

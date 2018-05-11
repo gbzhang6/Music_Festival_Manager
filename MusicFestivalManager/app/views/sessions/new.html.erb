@@ -11,12 +11,13 @@
     h3 {
         color: Red;
         text-align: center;
+        text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
     }
 
     label {
         color: DeepSkyBlue;
         text-align: center;
-        text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+        /* text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black; */
     }
 
     input, textarea, select, button {
@@ -49,7 +50,7 @@
   <div><%= text_field_tag :name %></div><br>
   <%= label_tag :password %>
   <div><%= password_field_tag :password %></div><br><br>
-  <%= button_tag(type: "submit", class: "btn btn-primary", name: "create", value: "conceal") do %>
+  <%= button_tag(type: "submit", class: "btn btn-primary btn-lg", name: "create", value: "conceal") do %>
     <span class="glyphicon glyphicon-user"></span> Log In
   <% end %>
 <% end %>
@@ -61,8 +62,10 @@
 <% end  %>
 
 <br />
-
-<div><label><%= link_to "Or click to create a new account", new_user_path %></label></div>
+<br>
+<div><label><%= link_to new_user_path, class: 'btn btn-success btn-lg' do %>
+  <i class="glyphicon glyphicon-user"></i> Or click to create a new account
+<% end %></label></div>
 
 </body>
 </html>
