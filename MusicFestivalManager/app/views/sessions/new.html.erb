@@ -37,7 +37,7 @@
     div {
       vertical-align:  left;
       text-align: center;
-      font-family: verdana;
+      /* font-family: verdana; */
     }
 
   </style>
@@ -59,8 +59,12 @@
 <% end %>
 
 <% if flash[:errors] %>
-  <% flash[:errors].each do |error| %>
-    <h3><%= error %></h3>
+  <% if flash[:errors].class == String %>
+      <%= flash[:errors] %>
+  <% else %>
+    <% flash[:errors].each do |error| %>
+      <h3><%= error %></h3>
+    <% end %>
   <% end %>
 <% end  %>
 

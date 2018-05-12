@@ -54,8 +54,12 @@
 <% end %>
 
 <% if flash[:errors] %>
-  <% flash[:errors].each do |error| %>
-    <h3><%= error %></h3>
+  <% if flash[:errors].class == String %>
+      <%= flash[:errors] %>
+  <% else %>
+    <% flash[:errors].each do |error| %>
+      <h3><%= error %></h3>
+    <% end %>
   <% end %>
 <% end  %>
 
