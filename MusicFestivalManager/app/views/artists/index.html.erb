@@ -1,21 +1,80 @@
-<table><h2>Artist Performances</h2>
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+    }
 
-<tr>
-  <th>Artist</th>
-  <th>Stage</th>
-  <th>Start Time</th>
-  <th>End Time</th>
-  <th>Add to My Schedule</th>
-</tr>
-  <% @artists.each do |artist| %>
-  <tr>
-    <td> <%= artist.name %> </td>
-    <td> <%= artist.performance.stage.name if artist.performance %> </td>
-    <td> <%= artist.performance.start_time.strftime("%A, %x at %l:%m%p") if artist.performance %> </td>
-    <td> <%= artist.performance.end_time.strftime("%A, %x at %l:%m%p") if artist.performance %> </td>
-    <td> <%= button_to "Add to My Schedule", bookings_path(:performance_id => artist.performance, :schedule_id => @user.schedule) %> </td>
+    td, th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+        font-size: 16px;
+        font-family: verdana;
+        background-color: rgba(255,255,255,0.5);
+        color: black;
+    }
+
+    h1 {
+        color: Red;
+        text-align: center;
+        font-family: Alba Super;
+        text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    }
+
+    h2 {
+        color: DeepSkyBlue;
+        font-family: Alba Super;
+        text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    }
+
+  </style>
+</head>
+
+<body background="https://cdn.news.bandsintown.com/wp-content/uploads/2017/01/Header_Gov_Ball_Cage_The_Elephant_Ryan_Vestil.jpg">
+    <br>
+
+  <h1><div><span style="color:#ff0000;">A</span><span style="color:#ff2000;">r</span><span style="color:#ff4000;">t</span><span style="color:#ff5f00;">i</span><span style="color:#ff7f00;">s</span><span style="color:#ffaa00;">t</span><span style="color:#ffd400;"> </span><span style="color:#ffff00;">P</span><span style="color:#bfff00;">e</span><span style="color:#80ff00;">r</span><span style="color:#40ff00;">f</span><span style="color:#00ff00;">o</span><span style="color:#00ff55;">r</span><span style="color:#00ffaa;">m</span><span style="color:#00ffff;">a</span><span style="color:#00bfff;">n</span><span style="color:#0080ff;">c</span><span style="color:#0040ff;">e</span><span style="color:#0000ff;">s</span></div></h1>
+
+  <table>
+    <tr>
+      <th>Artist</th>
+      <th>Stage</th>
+      <th>Start Time</th>
+      <th>End Time</th>
+      <th>Add to My Schedule</th>
+    </tr>
+
+
+    <tr>
+      <% @artists.each do |artist| %>
+      <tr>
+        <td> <%= artist.name %> </td>
+        <td> <%= artist.performance ? artist.performance.stage.name : "------------" %> </td>
+        <td> <%= artist.performance ? artist.performance.start_time.strftime("%A at %l:%M %p") : "------------" %> </td>
+        <td> <%= artist.performance ? artist.performance.end_time.strftime("%A at %l:%M %p") : "------------" %> </td>
+        <td> <%= button_to  bookings_path(performance_id: artist.performance, schedule_id: current_user.schedule), class: 'btn btn-success'  do %>
+          <i class="glyphicon glyphicon-plus"></i> Add to My Schedule
+        <% end %> </td>
+      </tr>
+      <% end %>
+      <% if flash[:errors] %>
+          <% if flash[:errors].class == String %>
+              <%= flash[:errors] %>
+          <% else %>
+            <% flash[:errors].each do |error| %>
+                <%= error %>
+            <% end %>
+          <% end %>
+      <% end  %>
+      <br>
+    </tr>
   </tr>
-  <% end %>
-</table>
+  </table>
 
-<%#= render "common/nav_all" %>
+</body>
+
+</html>

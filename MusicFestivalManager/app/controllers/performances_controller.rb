@@ -2,7 +2,7 @@ class PerformancesController < ApplicationController
   before_action :find_user, only: [:index, :show, :edit, :update, :destroy]
 
   def index
-    @performances = Performance.all
+    @performances = Performance.where("artist_id = ?", params[:artist_id])
   end
 
   def show

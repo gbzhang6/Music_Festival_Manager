@@ -1,9 +1,8 @@
 class ArtistsController < ApplicationController
-  # before_action :find_artist, only: [:show, :index, :edit, :update, :destroy]
-  before_action :find_user, only: [:show, :index, :edit, :update, :destroy]
+  before_action :find_user, only: [:show, :edit, :update, :destroy]
 
   def index
-    @artists = Artist.all
+    @artists = Artist.sort_by_name
   end
 
   def show
@@ -47,7 +46,7 @@ class ArtistsController < ApplicationController
   #   params.require(:artist).permit(:name, :description)
   # end
   def find_user
-    @user = User.find(session[:user_id])
+    @user = User.find(current_user)
   end
 
   # def find_artist

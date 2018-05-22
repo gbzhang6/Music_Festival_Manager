@@ -1,14 +1,66 @@
-<h2>Create a new user:</h2>
+<head>
+  <style>
+    h2 {
+        text-align: center;
+        font-family: Alba Super;
+    }
+    h3 {
+        color: Red;
+        text-align: center;
+        text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    }
+    label {
+        color: DeepSkyBlue;
+        /* background-color: rgba(255,255,255,0.5); */
+    }
+
+    form {
+        text-align: center;
+        font-family: verdana;
+        text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    }
+
+    div {
+        vertical-align:  left;
+        font-family: verdana;
+    }
+
+  </style>
+</head>
+
+<body background="https://static01.nyt.com/images/2014/06/10/arts/music/20140610-GOVBALL-slide-IBHG/20140610-GOVBALL-slide-IBHG-master1050.jpg">
+
+<h2><div><span style="color:#ff0000;">C</span><span style="color:#ff2a00;">r</span><span style="color:#ff5500;">e</span><span style="color:#ff7f00;">a</span><span style="color:#ff9f00;">t</span><span style="color:#ffbf00;">e</span><span style="color:#ffdf00;"> </span><span style="color:#ffff00;">a</span><span style="color:#aaff00;"> </span><span style="color:#55ff00;">N</span><span style="color:#00ff00;">e</span><span style="color:#00ff40;">w</span><span style="color:#00ff80;"> </span><span style="color:#00ffbf;">U</span><span style="color:#00ffff;">s</span><span style="color:#00aaff;">e</span><span style="color:#0055ff;">r</span><span style="color:#0000ff;">:</span></div></h2>
 <%= form_for @user do |f| %>
   <%= f.label :name, "Username:" %>
-  <%= f.text_field :name %>
+  <div><%= f.text_field :name %><br /></div>
   <%= f.label :first_name %>
-  <%= f.text_field :first_name %>
+  <div><%= f.text_field :first_name %></div><br />
   <%= f.label :last_name %>
-  <%= f.text_field :last_name %>
+  <div><%= f.text_field :last_name %></div><br />
+  <%= f.radio_button :gender, "Male" %>
+  <%= f.label :gender, "Male" %>
+  <%= f.radio_button :gender, "Female" %>
+  <%= f.label :gender, "Female" %><br />
+  <%= f.label :age %>
+  <div><%= f.number_field :age %></div><br />
   <%= f.label :password %>
-  <%= f.password_field :password %>
+  <div><%= f.password_field :password %></div><br />
   <%= f.label :password_confirmation, "Retype your password:" %>
-  <%= f.password_field :password_confirmation %>
-  <%= f.submit %>
+  <div><%= f.password_field :password_confirmation %></div><br />
+  <%= button_tag(type: "submit", class: "btn btn-primary btn-lg", name: "create", value: "conceal") do %>
+    <span class="glyphicon glyphicon-user"></span> Create User
+  <% end %><br />
 <% end %>
+
+<% if flash[:errors] %>
+  <% if flash[:errors].class == String %>
+      <%= flash[:errors] %>
+  <% else %>
+    <% flash[:errors].each do |error| %>
+      <h3><%= error %></h3>
+    <% end %>
+  <% end %>
+<% end  %>
+
+</body>

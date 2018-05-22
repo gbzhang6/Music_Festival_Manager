@@ -1,6 +1,19 @@
+<head>
+  <style>
+    h2 {
+        color: DeepSkyBlue;
+        /* background-color: rgba(255,255,255,0.5); */
+    }
+  </style>
+</head>
+
+<body background="http://www.passtheaux.co/wp-content/uploads/2017/06/governors-ball-teens-chris-lazzaro-1024x683.jpg">
+
 <h2>Make a new schedule name</h2>
  <%= form_for @schedule do |f| %>
   <%= f.label :name %>
   <%= f.text_field :name %>
   <%= f.submit %>
 <% end %>
+
+</body>

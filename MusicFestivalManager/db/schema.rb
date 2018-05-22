@@ -14,7 +14,6 @@ ActiveRecord::Schema.define(version: 2018_05_08_171800) do
 
   create_table "artists", force: :cascade do |t|
     t.string "name"
-    t.string "description"
   end
 
   create_table "bookings", force: :cascade do |t|
@@ -49,7 +48,8 @@ ActiveRecord::Schema.define(version: 2018_05_08_171800) do
     t.string "name"
     t.string "first_name"
     t.string "last_name"
-    t.integer "schedule_id"
+    t.string "gender"
+    t.integer "age"
     t.string "password_digest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

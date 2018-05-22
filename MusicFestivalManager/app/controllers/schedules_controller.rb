@@ -1,5 +1,6 @@
 class SchedulesController < ApplicationController
-  before_action :find_schedule, only: [:show, :edit, :update, :destroy]
+  before_action :find_schedule, only: [:show, :edit, :update, :destroy, :share_schedule]
+  before_action :user_schedule, :friend_schedule, only: [:share_schedule]
 
   def index
     @schedules = Schedule.all
@@ -13,7 +14,6 @@ class SchedulesController < ApplicationController
   end
 
   def create
-    byebug
     @schedule = Schedule.create(schedule_params)
 
     if @schedule.valid?
@@ -43,15 +43,26 @@ class SchedulesController < ApplicationController
     redirect_to schedules_path
   end
 
+  def share_schedule
+  end
 
   private
 
   def find_schedule
-    @schedule = Schedule.find(params[:id])
+    unsorted_schedule = Schedule.find(params[:id])
+    @schedule = unsorted_schedule.bookings.sort_by {|el| el.performance.start_time}
   end
 
   def schedule_params
     params.require(:schedule).permit(:name, :user_id)
   end
 
+  def user_schedule
+    user = User.find(session[:user_id])
+    @user_schedule = user.schedule
+  end
+
+  def friend_schedule
+    @friend_schedule = Schedule.find(params[:id])
+  end
 end
