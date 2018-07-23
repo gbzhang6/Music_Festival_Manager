@@ -49,7 +49,7 @@ class BookingsController < ApplicationController
       @friend_user = User.find_by(name: params[:friend_name])
       redirect_to share_path(@friend_user.schedule)
     else
-      flash[:errors] = "User does not exist"
+      flash[:errors] = ["User does not exist"]
       redirect_to schedule_path(@user.schedule)
     end
   end
