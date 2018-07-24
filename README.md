@@ -1,33 +1,25 @@
-# README
+## Music Festival Manager
+Music Festival Manager is a planner where users can view different artists, stages and performance times and add to their own schedules, as well as compare their friends’ schedules. The website also provides its own analytics.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Techinical Aspets
++ Built the entire web application using Ruby, Ruby on Rails and the MVC pattern
++ Used Bootstrap and custom CSS for styling
++ Created customized sorting and filtering algorithms for analytics
++ Implemented user validation and authentication using bcrypt
 
-Things you may want to cover:
+## Screenshot
 
-* Ruby version
+## Installation
+<code>git clone https://github.com/rainANDshine/Music_Festival_Manager/</code>
+<code>bundle install</code>
+<code>rails s</code>
 
-* System dependencies
+## Credits
+Built by
+[Gui Bin Zhang](https://github.com/gbzhang6), [Shun Yao](https://github.com/rainANDshine), [Yong-Nicholas Kim](https://github.com/yongnicholaskim), and [William Dale](https://github.com/dalewb)
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-Requirements
-  1. App should have least five models.
-  2. There should be at least twenty methods total in your models. These are to be used to better extract data from your tables. Think Flatiron BnB Lab
-  3. No APIs until you get approval from an instructor.
-  4. Specs - there should be at least 10 specs in your project (five per person).
-  5. An analytics page - The main learning goal of this is to get you to write some interesting activerecord queries.
-  6. No JavaScript. Stay focused on Rails for this project - we'll have plenty of time this semeseter to cover JS topics.
+## License
+MIT ©
 
 User
   1. I should be able to see all the artists and performances and their timeslots
@@ -50,8 +42,4 @@ Performance/Artist/Stage/Bookings
   5. schedule is a collection of all the booking
 
 To Do list
-2. 10 specs - Billy
-
-
-* ...
-# Music_Festival_Manager
+1. 10 specs
