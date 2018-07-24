@@ -2,6 +2,14 @@
 <html>
 <head>
   <style>
+    p {
+        /* text-align: center; */
+        font-size: 18px;
+        margin: 30px;
+        padding: 20px;
+        background-color: rgba(255,255,255,0.5);
+    }
+
     h2 {
         color: DeepSkyBlue;
         font-family: Alba Super;
@@ -45,34 +53,48 @@
 
 <body background="https://boweryboogie-wpengine.netdna-ssl.com/content/uploads/2017/06/govball-2017-18_wm.jpg">
 
-<h2><div><span style="color:#ff0000;">S</span><span style="color:#ff7f00;">i</span><span style="color:#ffbf00;">g</span><span style="color:#ffff00;">n</span><span style="color:#00ff00;"> </span><span style="color:#00ff80;">I</span><span style="color:#00ffff;">n</span><span style="color:#0000ff;"></span></div></h2>
-<br>
+<div>
+  <% if logged_in? %>
+    <p>The Governors Ball Music Festival (commonly known as Governors Ball or Gov Ball) is a multi-day music festival held on Randall's Island in New York City. Launched in 2011, the festival features an array of genres and styles of music, including rock, electronic, hip-hop, indie, Americana, pop, folk, and more. It is produced by Founders Entertainment, a festival promotion company based in New York City, which also produces The Meadows Music & Arts Festival. Aside from the wide variety of music, the festival features a multitude of popular New York restaurants and food trucks, as well as activities and games.</p>
 
-<%= form_tag sessions_path do %>
-  <%= label_tag :name, "Username" %>
-  <div><%= text_field_tag :name %></div><br>
-  <%= label_tag :password %>
-  <div><%= password_field_tag :password %></div><br><br>
-  <%= button_tag(type: "submit", class: "btn btn-primary btn-lg", name: "create", value: "conceal") do %>
-    <span class="glyphicon glyphicon-user"></span> Log In
-  <% end %>
-<% end %>
-
-<% if flash[:errors] %>
-  <% if flash[:errors].class == String %>
-      <%= flash[:errors] %>
-  <% else %>
-    <% flash[:errors].each do |error| %>
-      <h3><%= error %></h3>
+    <%= link_to schedule_path(current_user.schedule.id), class: 'btn btn-primary btn-lg' do %>
+      <i class="glyphicon glyphicon-music"></i> Go to your schedule
     <% end %>
-  <% end %>
-<% end  %>
 
-<br />
-<br>
-<div><label><%= link_to new_user_path, class: 'btn btn-success btn-lg' do %>
-  <i class="glyphicon glyphicon-user"></i> Or click to create a new account
-<% end %></label></div>
+  <% else %>
+
+    <h2><div><span style="color:#ff0000;">S</span><span style="color:#ff7f00;">i</span><span style="color:#ffbf00;">g</span><span style="color:#ffff00;">n</span><span style="color:#00ff00;"> </span><span style="color:#00ff80;">I</span><span style="color:#00ffff;">n</span><span style="color:#0000ff;"></span></div></h2>
+    <br>
+
+    <%= form_tag sessions_path do %>
+      <%= label_tag :name, "Username" %>
+      <div><%= text_field_tag :name %></div><br>
+      <%= label_tag :password %>
+      <div><%= password_field_tag :password %></div><br><br>
+      <%= button_tag(type: "submit", class: "btn btn-primary btn-lg", name: "create", value: "conceal") do %>
+        <span class="glyphicon glyphicon-user"></span> Log In
+      <% end %>
+    <% end %>
+
+    <% if flash[:errors] %>
+      <% if flash[:errors].class == String %>
+          <%= flash[:errors] %>
+      <% else %>
+        <% flash[:errors].each do |error| %>
+          <h3><%= error %></h3>
+        <% end %>
+      <% end %>
+    <% end  %>
+
+    <br />
+    <br>
+    <div><label><%= link_to new_user_path, class: 'btn btn-success btn-lg' do %>
+      <i class="glyphicon glyphicon-user"></i> Or click to create a new account
+    <% end %></label></div>
+  <% end %>
+</div>
+
+
 
 </body>
 </html>
