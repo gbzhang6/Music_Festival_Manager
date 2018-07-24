@@ -16,7 +16,7 @@ class UsersController < ApplicationController
     @user = User.create(user_params)
 
     if @user.valid?
-      @user.schedule = Schedule.create(name: "#{@user.name}'s awesome schedule'")
+      @user.schedule = Schedule.create(name: "#{@user.first_name}'s awesome schedule'")
       session[:user_id] = @user.id
       redirect_to @user
     else
@@ -53,7 +53,7 @@ class UsersController < ApplicationController
   end
 
   def user_params
-    params.require(:user).permit(:name, :gender, :age, :first_name, :last_name, :schedule, :password, :password_confirmation)
+    params.require(:user).permit(:username, :gender, :age, :first_name, :last_name, :schedule, :password, :password_confirmation)
   end
 
 end

@@ -67,8 +67,8 @@
     <br>
 
     <%= form_tag sessions_path do %>
-      <%= label_tag :name, "Username" %>
-      <div><%= text_field_tag :name %></div><br>
+      <%= label_tag :username, "Username" %>
+      <div><%= text_field_tag :username %></div><br>
       <%= label_tag :password %>
       <div><%= password_field_tag :password %></div><br><br>
       <%= button_tag(type: "submit", class: "btn btn-primary btn-lg", name: "create", value: "conceal") do %>
