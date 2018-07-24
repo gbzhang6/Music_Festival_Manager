@@ -26,7 +26,7 @@ class Booking < ApplicationRecord
   end
 
   def booked_performance_ids
-    Schedule.find(schedule_id).bookings.map {|el| el.performance.id}
+    Schedule.find(schedule_id).bookings.map {|el| el.performance_id}
   end
 
   def performance_times_cannot_overlap
