@@ -17,8 +17,8 @@ Master
 
 <code>rails s</code>
 
-## Credits
-Built by [Gui Bin Zhang](https://github.com/gbzhang6), [Shun Yao](https://github.com/rainANDshine), [Yong-Nicholas Kim](https://github.com/yongnicholaskim), and [William Dale](https://github.com/dalewb)
+## Youtube Video Demo
+https://www.youtube.com/watch?v=YtpMOqYOjKc
 
 ## Screenshots
 <img src="1.png" alt="1">
@@ -26,6 +26,9 @@ Built by [Gui Bin Zhang](https://github.com/gbzhang6), [Shun Yao](https://github
 <img src="3.png" alt="3">
 <img src="4.png" alt="4">
 <img src="5.png" alt="5">
+
+## Credits
+Built by [Gui Bin Zhang](https://github.com/gbzhang6), [Shun Yao](https://github.com/rainANDshine), [Yong-Nicholas Kim](https://github.com/yongnicholaskim), and [William Dale](https://github.com/dalewb)
 
 ## License
 MIT ©
