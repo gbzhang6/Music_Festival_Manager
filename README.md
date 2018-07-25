@@ -1,7 +1,7 @@
 ## Music Festival Planner
 A music festival planner where users can add shows to their own schedule based on different artists, stages and performance times, as well as delete them. They can also view and compare their friends’ schedule. The app also provides analytics.
 
-## Techinical Aspets
+## Technical Aspects
 + Built the entire web application using Ruby, Ruby on Rails and the MVC pattern
 + Used Bootstrap and custom CSS for styling
 + Created customized sorting and filtering algorithms for analytics
@@ -11,11 +11,11 @@ A music festival planner where users can add shows to their own schedule based o
 Master
 
 ## Installation
-<code>git clone https://github.com/rainANDshine/music-festival-planner</code>
+1. git clone https://github.com/rainANDshine/music-festival-planner
 
-<code>bundle</code>
+2. bundle
 
-<code>rails s</code>
+3. rails s
 
 ## Youtube Video Demo
 https://www.youtube.com/watch?v=YtpMOqYOjKc
