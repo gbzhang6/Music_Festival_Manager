@@ -1,5 +1,5 @@
 ## Music Festival Planner
-A music festival planner where users can add shows to their own schedules based on different artists, stages and performance times, as well as delete them. They can also view and compare their friends’ schedules. The app also provides analytics.
+A music festival planner where users can add shows to their own schedule based on different artists, stages and performance times, as well as delete them. They can also view and compare their friends’ schedule. The app also provides analytics.
 
 ## Techinical Aspets
 + Built the entire web application using Ruby, Ruby on Rails and the MVC pattern
