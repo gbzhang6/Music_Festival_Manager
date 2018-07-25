@@ -7,6 +7,9 @@ A music festival planner where users can add shows to their own schedules based 
 + Created customized sorting and filtering algorithms for analytics
 + Implemented user validation and authentication using bcrypt
 
+## Latest Stable Branch
+Master
+
 ## Installation
 <code>git clone https://github.com/rainANDshine/music-festival-planner</code>
 
