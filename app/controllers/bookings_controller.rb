@@ -13,9 +13,10 @@ class BookingsController < ApplicationController
   end
 
   def create
-    @booking = Booking.create(performance_id: params[:performance_id], schedule_id: params[:schedule_id])
+    @booking = Booking.new(performance_id: params[:performance_id], schedule_id: params[:schedule_id])
 
     if @booking.valid?
+      @booking.save
       flash[:errors] = nil
       redirect_to schedule_path(@booking.schedule)
     else
@@ -46,7 +47,7 @@ class BookingsController < ApplicationController
   def find_friend
     @user = User.find(session[:user_id])
     if User.all_names.include?(params[:friend_name])
-      @friend_user = User.find_by(name: params[:friend_name])
+      @friend_user = User.find_by(username: params[:friend_name])
       redirect_to share_path(@friend_user.schedule)
     else
       flash[:errors] = ["User does not exist"]
@@ -65,7 +66,7 @@ class BookingsController < ApplicationController
     @user = User.find(session[:user_id])
   end
 
-  # def booking_params
-  #   params.require(:booking).permit(:performance_id, :schedule_id)
-  # end
+  def booking_params
+    params.permit(:performance_id, :schedule_id)
+  end
 end

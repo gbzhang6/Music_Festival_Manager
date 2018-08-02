@@ -14,10 +14,10 @@ Artist.destroy_all
 Performance.destroy_all
 Schedule.destroy_all
 
-billy = User.create(name: "billy", age: 10, gender: "Male", password: "awesome", password_confirmation: "awesome", first_name: "billy", last_name: "dale")
-shun = User.create(name: "shun", age: 10, gender: "Male", password: "awesome", password_confirmation: "awesome", first_name: "shun", last_name: "yao")
-gui = User.create(name: "gui", age: 10, gender: "Female", password: "awesome", password_confirmation: "awesome", first_name: "gui", last_name: "zhang")
-yong = User.create(name: "yong-nicholas", age: 10, gender: "Male", password: "awesome", password_confirmation: "awesome", first_name: "YN", last_name: "kim")
+billy = User.create(username: "billy", age: 10, gender: "Male", password: "awesome", password_confirmation: "awesome", first_name: "billy", last_name: "dale")
+shun = User.create(username: "shun", age: 10, gender: "Male", password: "awesome", password_confirmation: "awesome", first_name: "shun", last_name: "yao")
+gui = User.create(username: "gui", age: 10, gender: "Female", password: "awesome", password_confirmation: "awesome", first_name: "gui", last_name: "zhang")
+yong = User.create(username: "yong-nicholas", age: 10, gender: "Male", password: "awesome", password_confirmation: "awesome", first_name: "YN", last_name: "kim")
 
 gui.schedule = Schedule.create(name: "gui's awesome schedule")
 billy.schedule = Schedule.create(name: "billy's awesome schedule")
