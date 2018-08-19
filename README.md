@@ -17,6 +17,9 @@ Master
 
 3. rails s
 
+## Live App
+https://music-festival-planner-1.herokuapp.com/
+
 ## Youtube Video Demo
 https://www.youtube.com/watch?v=YtpMOqYOjKc
 
